@@ -1,0 +1,9 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+//хедер и футер
+@import 'style-head-foot';
+body {
+    background: $darkGray;
+}

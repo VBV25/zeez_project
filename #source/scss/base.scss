@@ -1,0 +1,12 @@
+//-----переменные-----
+$darkGray: rgb(100, 100, 100);
+//-----шаблоны-----
+%borderTest {
+    border: 2px solid red;
+}
+
+@mixin flCent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
