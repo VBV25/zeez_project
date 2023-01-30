@@ -17,13 +17,11 @@ body {
 
 //1 секция
 .demonstration-block {
-    width: 100%;
-    height: 901px;
+    @include wiHe($he: 901px);
     background-image: url('../img/bg-1sect.jpg');
     @include bgImg($bgImSize: auto);
     &__conteiner {
-        width: $contentWidh;
-        height: 100%;
+        @include wiHe($contentWidh);
         margin: 0 auto;
         padding-top: $heHeader + 99px;
         color: $whiteColor;
@@ -42,27 +40,25 @@ body {
         margin-bottom: 40px;
     }
     &__btn-group {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexAlJu;
     }
     &__btn {
-        width: 270px;
-        height: 100px;
-        background-color: $blueColor;
-        color: $whiteColor;
         @include fontSize(18px,
         500,
         24px);
+        @include wiHe(270px,
+        100px);
+        background-color: $blueColor;
+        color: $whiteColor;
     }
     &__social-group {
         display: flex;
         gap: 25px;
     }
     &__link {
-        width: 48px;
-        height: 48px;
         @include bgImg(none);
+        @include wiHe(48px,
+        48px);
     }
     &__fb {
         background-image: url('../img/svg/fb-lable-white.svg');
@@ -80,23 +76,17 @@ body {
 
 //2 секция
 .timetable {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 808px;
+    @include flexAlJu(center);
+    @include wiHe($he: 808px);
     background-color: $whiteColor;
     &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: $contentWidh;
-        height: 100%;
+        @include flexAlJu;
+        @include wiHe($contentWidh);
     }
     &__day-block-group ul {
+        @include gridAlJu(unset);
         min-width: max-content;
         height: max-content;
-        display: grid;
-        align-items: center;
         gap: 40px;
     }
     &__day {
@@ -109,35 +99,32 @@ body {
             $blackColor);
         }
         p {
-            display: flex;
             @include fontSize(18px,
             400,
             32px,
             $blackColor);
+            display: flex;
             span {
+                @include wiHe(max-content);
+                @include flexAlJu(center);
                 padding: 0 12px;
-                width: max-content;
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
         }
     }
     &__square {
+        @include wiHe(471px,
+        502px);
         position: relative;
         display: flex;
         left: -100px;
-        width: 471px;
-        height: 502px;
         border: 2px solid $goldColor;
         &::after,
         &::before {
+            @include bgImg;
+            @include wiHe(323px,
+            486px);
             content: '';
             position: absolute;
-            width: 323px;
-            height: 486px;
-            @include bgImg;
         }
         &::after {
             top: 85px;
@@ -154,17 +141,13 @@ body {
 
 //3 секция
 .advantages {
-    width: 100%;
-    height: 782px;
+    @include wiHe($he: 782px);
+    @include flexAlJu(center);
     background-color: $blueColor;
-    color: $whiteColor;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     &__arrow {
-        margin: 10px;
-        width: 31px;
-        height: 31px;
+        @include wiHe(31px,
+        31px);
+        margin: 80px;
         border-top-left-radius: 5px;
         background-color: $blueColor;
         border-top: 2px solid $goldColor;
@@ -187,99 +170,281 @@ body {
         transform: rotate(135deg);
     }
     .wrapper-gallery-text {
+        @include wiHe(900px,
+        max-content);
+        @include flexAlJu(center);
         position: relative;
-        border: 2px solid red;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 900px;
-        height: max-content;
         overflow: hidden;
     }
     &__container {
+        @include wiHe(max-content,
+        max-content);
+        @include flexAlJu(center);
         position: relative;
         top: 0;
         left: 900px;
         box-sizing: content-box;
-        border: 2px solid rgb(0, 174, 255);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: max-content;
-        height: max-content;
     }
     &__block {
-        padding: 10px 55px;
-        display: flex;
+        @include wiHe(900px,
+        max-content);
+        @include flexAlJu(center);
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid rgb(0, 255, 34);
-        width: 900px;
-        height: max-content;
+        padding: 10px 55px;
         h3,
         p,
         h4 {
             text-align: center;
         }
+        h3 {
+            @include fontSize(36px,
+            600,
+            40px,
+            $goldColor);
+            margin-bottom: 20px;
+        }
+        p {
+            @include fontSize($liHe: 40px);
+            margin-bottom: 40px;
+        }
+        h4 {
+            @include fontSize(24px,
+            600,
+            40px,
+            $goldColor);
+            text-transform: uppercase;
+            letter-spacing: 0.245em;
+        }
     }
-    &__lable {}
+    &__lable {
+        @include wiHe(83px,
+        58px);
+        margin-bottom: 34px;
+    }
 }
 
-
-/*
 //4 секция
 .cafe-menu {
-    &__card {}
+    @include gridAlJu(center);
+    width: 100%;
+    gap: 30px;
+    padding: 114px 0px 80px;
+    background-color: $whiteColor;
+    &__card {
+        width: 1168px;
+        @include flexAlJu;
+    }
 }
-
-.card-menu-1 {}
 
 .card-menu {
-    &__text {}
-    &__line {}
-    &__img {}
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    &__text {
+        h4 {
+            @include fontSize(40px,
+            700,
+            88px,
+            $blackColor);
+            text-transform: uppercase;
+        }
+        p {
+            @include fontSize($liHe: 32px, $color: $grayColor);
+            display: flex;
+            width: 470px;
+            margin-top: 16px;
+        }
+    }
+    &__line {
+        @include wiHe(108px,
+        2px);
+        position: relative;
+        top: 4;
+        left: -54px;
+    }
+    &__img {
+        @include wiHe(670px,
+        560px);
+    }
 }
 
-.card-menu-2 {}
+.card-menu-2 {
+    flex-direction: row-reverse;
+}
 
-.card-menu-3 {}
-
+//5 секция
 .gallery {
-    &__header {}
-    &__title {}
-    &__text {}
-    &__row {}
-    &__nav {}
-    &__arrow {}
-    &__photo {}
-    &__photo-1 {}
-    &__photo-2 {}
-    &__photo-3 {}
+    @include wiHe($he: 605px);
+    @include gridAlJu(center,
+    unset);
+    position: relative;
+    padding-top: 68px;
+    background-color: $blueColor;
+    &__header {
+        @include wiHe(1170px,
+        max-content);
+        position: relative;
+    }
+    &__title {
+        @include fontSize(48px,
+        700,
+        88px);
+    }
+    &__text {
+        @include fontSize($liHe: 32px);
+        width: 569px;
+    }
+    &__nav {
+        @include wiHe(max-content,
+        max-content);
+        @include flexAlJu;
+        gap: 20px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -23px;
+    }
+    &__arrow {
+        @include wiHe(31px,
+        31px);
+        margin: 10px;
+        border-top-left-radius: 5px;
+        background-color: $blueColor;
+        border-top: 2px solid $goldColor;
+        border-left: 2px solid $goldColor;
+        &:hover {
+            border-width: 3.5px;
+        }
+        &:disabled {
+            border-color: $darkGray;
+            cursor: default;
+        }
+        &:hover:disabled {
+            border-width: 2px;
+        }
+    }
+    .arrow-forward {
+        transform: rotate(-45deg);
+    }
+    .arrow-back {
+        transform: rotate(135deg);
+    }
+    &__row {
+        @include flexAlJu(space-around);
+        @include wiHe(100%,
+        max-content);
+        position: absolute;
+        top: 262px;
+        gap: 30px;
+        overflow: hidden;
+    }
+    &__photo {
+        @include wiHe(970px,
+        $galleryImgHe);
+    }
 }
 
-.arrow-forward {}
-
-.arrow-back {}
-
+//6 секция
 .info {
-    &__contacts {}
-    &__questions {}
+    @include wiHe($he: max-content);
+    @include flexAlJu(center);
+    background-color: $whiteColor;
+    padding-top: $galleryImgHe/ 2 + $padTop6Block;
+    padding-bottom: 25px;
+    &__container {
+        @include wiHe(1170px,
+        max-content);
+        @include flexAlJu(start,
+        start);
+        display: flex;
+        gap: 96px;
+    }
+    &__contacts {
+        display: grid;
+        gap: 40px;
+        .contacts {
+            &__title {
+                @include fontSize(48px,
+                700,
+                88px,
+                $blackColor);
+            }
+            &__row {
+                width: max-content;
+                display: flex;
+                gap: 16px;
+            }
+            &__lable {
+                @include wiHe(64px,
+                64px);
+            }
+            &__text-column {
+                p {
+                    @include fontSize($liHe: 32px, $color: $blackColor);
+                }
+                h3 {
+                    @include fontSize(24px,
+                    500,
+                    32px,
+                    $blackColor);
+                }
+            }
+        }
+    }
+    &__questions {
+        display: grid;
+        width: 678px;
+        .questions {
+            &__title {
+                @include fontSize(48px,
+                700,
+                88px,
+                $blackColor);
+                margin-bottom: 29px;
+            }
+            &__form {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 20px;
+                column-gap: 19px;
+                label {
+                    @include fontSize($liHe: 32px, $color: $blackColor);
+                    display: grid;
+                    input {
+                        @include wiHe(320px,
+                        80px);
+                        border: 1px solid $smokeColor;
+                        padding: 28px 16px;
+                    }
+                    textarea {
+                        @include wiHe(670px,
+                        max-content);
+                        border: 1px solid $smokeColor;
+                        padding: 28px 16px;
+                    }
+                }
+            }
+            &__btn {
+                @include wiHe(270px,
+                100px);
+                @include fontSize(24px,
+                500,
+                24px);
+                background-color: $blueColor;
+            }
+        }
+    }
 }
 
-.contacts {
-    &__title {}
-    &__row {}
-    &__lable {}
-    &__text-column {}
-}
-
-.questions {
-    &_title {}
-    &__form {}
-    &__btn {}
-}
-
+//7 секция
 .map {
-    &__script {}
-}*/
+    @include wiHe($he: max-content);
+    @include flexAlJu(center);
+    background-color: $whiteColor;
+    padding: 25px 0px 20px;
+    &__script {
+        @include wiHe(1170px,
+        547px);
+    }
+}

@@ -80,7 +80,7 @@
         <button type="button" class="advantages__arrow arrow-left" id="arrow-left" disabled></button>
         <div class="wrapper-gallery-text">
             <div class="advantages__container">
-                <div class="advantages__block" id="advantages__block-1">
+                <div class="advantages__block visible" id="advantages__block-1 ">
                     <div class="advantages__lable">
                         <img src="img/svg/99.svg" alt="lable">
                     </div>
@@ -115,7 +115,7 @@
     <!--'4 БЛОК'-->
     <section class="cafe-menu">
         <!--'1card'-->
-        <div class="cafe-menu__card card-menu-1">
+        <div class="cafe-menu__card ">
             <div class="card-menu__text">
                 <h4>LEKKER ETEN</h4>
                 <div class="card-menu__line">
@@ -130,24 +130,24 @@
         <!--'2card'-->
         <div class="cafe-menu__card card-menu-2">
             <div class="card-menu__text">
-                <h4>LEKKER ETEN</h4>
+                <h4>TOFFE AMBIANCE</h4>
                 <div class="card-menu__line">
                     <img src="img/svg/gold-line.svg" alt="line">
                 </div>
-                <p>Eten gaat niet over indruk maken op mensen. Het gaat erom dat ze zich op hun gemak voelen. Dat is onze filosofie, goed eten in een goede sfeer.</p>
+                <p>Het creëren van de juiste sfeer is zeer belangrijk voor ons. We nemen onze tijd om te zorgen dat alle elementen bijdragen aan de juiste setting.</p>
             </div>
             <div class="card-menu__img">
                 <img src="img/4section-02.jpg" alt="photo-2">
             </div>
         </div>
         <!--'3card'-->
-        <div class="cafe-menu__card card-menu-3">
+        <div class="cafe-menu__card ">
             <div class="card-menu__text">
-                <h4>LEKKER ETEN</h4>
+                <h4>LEKKERE COCKTAILS</h4>
                 <div class="card-menu__line">
                     <img src="img/svg/gold-line.svg" alt="line">
                 </div>
-                <p>Eten gaat niet over indruk maken op mensen. Het gaat erom dat ze zich op hun gemak voelen. Dat is onze filosofie, goed eten in een goede sfeer.</p>
+                <p>Ons doel is simpel: een gastvrije plek bieden waar u kunt genieten van een onvergetelijke cocktail, een goed gesprek en lekker eten.</p>
             </div>
             <div class="card-menu__img">
                 <img src="img/4section-03.jpg" alt="photo-3">
@@ -158,23 +158,23 @@
     <!--'5 БЛОК'-->
     <section class="gallery">
         <div class="gallery__header">
-            <div class="gallery__title"></div>
-            <div class="gallery__text"></div>
-        </div>
-        <div class="gallery__row">
+            <div class="gallery__title">Sfeerfoto's</div>
+            <div class="gallery__text">De beste manier om de sfeer te ervaren is eens langskomen. In tussentijd hebben we hier alvast wat foto’s voor je klaar.</div>
             <!--'Стрелки для галереи'-->
             <div class="gallery__nav">
                 <div class="gallery__arrow arrow-forward" id="gallery__nav-forward"></div>
                 <div class="gallery__arrow arrow-back" id="gallery__nav-back"></div>
             </div>
+        </div>
+        <div class="gallery__row">
             <!--'Галерея'-->
-            <div class="gallery__photo gallery__photo-1" id="gallery__photo-1">
+            <div class="gallery__photo " id="gallery__photo-1">
                 <img src="img/gallery/01.jpg" alt="photo-1">
             </div>
-            <div class="gallery__photo gallery__photo-2" id="gallery__photo-2">
+            <div class="gallery__photo " id="gallery__photo-2">
                 <img src="img/gallery/02.jpg" alt="photo-2">
             </div>
-            <div class="gallery__photo gallery__photo-3" id="gallery__photo-3">
+            <div class="gallery__photo " id="gallery__photo-3">
                 <img src="img/gallery/03.jpg" alt="photo-3">
             </div>
         </div>
@@ -182,71 +182,75 @@
 
     <!--'6 БЛОК'-->
     <section class="info">
-        <div class="info__contacts">
-            <div class="contacts__title">Contacts</div>
-            <!--'Телефон'-->
-            <div class="contacts__row">
-                <div class="contacts__lable">
-                    <img src="img/svg/phone-lable.svg" alt="phone">
+        <div class="info__container">
+            <div class="info__contacts">
+                <div class="contacts__title">Contacts</div>
+                <!--'Телефон'-->
+                <div class="contacts__row">
+                    <div class="contacts__lable">
+                        <img src="img/svg/phone-lable.svg" alt="phone">
+                    </div>
+                    <div class="contacts__text-column">
+                        <p>Phone Number</p>
+                        <h3>+32 9 282 57 25</h3>
+                    </div>
                 </div>
-                <div class="contacts__text-column">
-                    <p>Phone Number</p>
-                    <h3>+32 9 282 57 25</h3>
+                <!--'Почта'-->
+                <div class="contacts__row">
+                    <div class="contacts__lable">
+                        <img src="img/svg/mail-lable.svg" alt="mail">
+                    </div>
+                    <div class="contacts__text-column">
+                        <p>Email</p>
+                        <h3>info@email.com</h3>
+                    </div>
+                </div>
+                <!--'Режим работы'-->
+                <div class="contacts__row">
+                    <div class="contacts__lable">
+                        <img src="img/svg/clock-lable.svg" alt="clock">
+                    </div>
+                    <div class="contacts__text-column">
+                        <p>Opening Hours</p>
+                        <h3>Everyday from 6 AM - 9 PM</h3>
+                    </div>
+                </div>
+                <!--'Адрес'-->
+                <div class="contacts__row">
+                    <div class="contacts__lable">
+                        <img src="img/svg/img-lable.svg" alt="map">
+                    </div>
+                    <div class="contacts__text-column">
+                        <p>Map Street</p>
+                        <h3>Jl. Raya Surabaya 2787</h3>
+                    </div>
                 </div>
             </div>
-            <!--'Почта'-->
-            <div class="contacts__row">
-                <div class="contacts__lable">
-                    <img src="img/svg/mail-lable.svg" alt="mail">
-                </div>
-                <div class="contacts__text-column">
-                    <p>Email</p>
-                    <h3>info@email.com</h3>
-                </div>
-            </div>
-            <!--'Режим работы'-->
-            <div class="contacts__row">
-                <div class="contacts__lable">
-                    <img src="img/svg/clock-lable.svg" alt="clock">
-                </div>
-                <div class="contacts__text-column">
-                    <p>Opening Hours</p>
-                    <h3>Everyday from 6 AM - 9 PM</h3>
-                </div>
-            </div>
-            <!--'Адрес'-->
-            <div class="contacts__row">
-                <div class="contacts__lable">
-                    <img src="img/svg/img-lable.svg" alt="map">
-                </div>
-                <div class="contacts__text-column">
-                    <p>Map Street</p>
-                    <h3>Jl. Raya Surabaya 2787</h3>
-                </div>
-            </div>
-        </div>
-        <div class="info__questions">
-            <div class="questions_title">have any questions?</div>
-            <form class="questions__form">
-                <label for="name">Name
-                    <input type="text" placeholder="Input your name" id="name">
-                </label>
-                <label for="email">Email
-                    <input type="text" placeholder="Input your email" id="email">
-                </label>
-                <label for="request">Speciale Request
-                    <textarea name="request" id="request" cols="30" rows="10" placeholder="
+            <div class="info__questions">
+                <div class="questions__title">have any questions?</div>
+                <form class="questions__form">
+                    <label for="name">Name
+                        <input type="text" placeholder="Input your name" id="name">
+                    </label>
+                    <label for="email">Email
+                        <input type="email" placeholder="Input your email" id="email">
+                    </label>
+                    <label for="request">Speciale Request
+                        <textarea name="request" id="request" cols="30" rows="10" placeholder="
                     Input your special request
                     "></textarea>
-                </label>
-                <button class="questions__btn" type="submit">Send</button>
-            </form>
+                    </label>
+                    <button class="questions__btn" type="submit">Send</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!--'7 БЛОК'-->
     <section class="map">
-        <div class="map__script"></div>
+        <div class="map__script">
+            <img src="img/map.jpg" alt="map">
+        </div>
     </section>
 
     <!-- @import 'footer.html' -->

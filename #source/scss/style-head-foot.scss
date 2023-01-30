@@ -2,46 +2,75 @@
 
 .header {
     // background-color: $blackColor;
+    @include wiHe($he: $heHeader);
+    @extend %LeTo;
     z-index: 50;
     position: absolute;
-    width: 100%;
-    height: $heHeader;
-    @extend %LeTo;
     .container {
-        display: flex;
+        @include wiHe($contentWidh);
+        @include flexAlJu;
         margin: 0px auto;
-        width: $contentWidh;
-        height: 100%;
-        align-items: center;
-        justify-content: space-between;
     }
     &__logo {
-        width: 269px /1168px * 100%;
-        height: 55px;
+        @include wiHe(269px, 55px);
+        //width: 269px /1168px * 100%;
         img {
-            @extend %WiHe100;
+            @include wiHe;
         }
     }
     &__navigation ul {
         display: flex;
         gap: 45px;
-        border: 2px solid red;
     }
     &__link {
         @include fontSize;
     }
     &__phone {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexAlJu(center);
         img {
-            width: 24px;
-            height: 24px;
+            @include wiHe(24px, 24px);
             margin-right: 11px;
         }
         p {
             @include fontSize;
         }
+    }
+}
+
+
+/*-----FOOTER------*/
+
+.footer {
+    @include wiHe($he: max-content);
+    @include flexAlJu(center);
+    background-color: $whiteColor;
+    padding: 20px 0px 526px;
+    &__row {
+        @include flexAlJu;
+        width: 1170px;
+    }
+    &__logo {
+        @include wiHe(296px, 55px);
+    }
+    &__sotial-link-group {
+        display: flex;
+        gap: 25px;
+    }
+    &__link {
+        @include wiHe(48px, 48px);
+        @include bgImg(unset);
+    }
+    &__fb {
+        background-image: url('../img/svg/fb-lable-black.svg');
+    }
+    &__ig {
+        background-image: url('../img/svg/ig-lable-black.svg');
+    }
+    &__tw {
+        background-image: url('../img/svg/tw-lable-black.svg');
+    }
+    &__yt {
+        background-image: url('../img/svg/yt-lable-black.svg');
     }
 }
 

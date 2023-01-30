@@ -1,27 +1,50 @@
-//-----переменные-----
-//цвета
-$darkGray: rgb(100, 100, 100);
-$whiteColor: rgb(255, 255, 255);
-$blueColor: rgb(58, 69, 116);
-$blackColor: rgb(0, 0, 0);
-$goldColor: rgb(211, 180, 127);
-//шрифты
-$fontFamily1: Arial,
-sans-serif; //Poppins
-//размеры
-$heHeader: 165px;
-$contentWidh: 1168px/1920px * 100%;
-//-----шаблоны-----
-%WiHe100 {
-    width: 100%;
-    height: 100%;
+//------------шрифты--------------------
+@font-face {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    src: local('Poppins-Regular'), url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
 
+//-----переменные-----
+//цвета
+$darkGray: rgb(100,
+100,
+100);
+$whiteColor: rgb(255,
+255,
+255);
+$blueColor: rgb(58,
+69,
+116);
+$blackColor: rgb(0,
+0,
+0);
+$goldColor: rgb(211,
+180,
+127);
+$grayColor: rgb(128,
+128,
+128);
+$smokeColor: rgb(204,
+204,
+204);
+//шрифты
+$fontFamily1: Poppins,
+Arial,
+sans-serif;
+//размеры
+$heHeader: 165px;
+$contentWidh: 1168px; //1168px/1920px * 100%;
+$galleryImgHe: 646px; //высота зображений в галерее
+$padTop6Block: 101px;
+//-----шаблоны-----
 %LeTo {
     top: 0;
     left: 0;
 }
 
+//----------------------------------------------------------------------------------------------------------------------------------------
 //-------миксины------
 @mixin flCent {
     display: flex;
@@ -29,7 +52,10 @@ $contentWidh: 1168px/1920px * 100%;
     align-items: center;
 }
 
-@mixin fontSize($fsiz: 16px, $fWe: 400, $liHe: 24px, $color: $whiteColor) {
+@mixin fontSize($fsiz: 16px,
+$fWe: 400,
+$liHe: 24px,
+$color: $whiteColor) {
     font-size: $fsiz;
     font-weight: $fWe;
     line-height: $liHe;
@@ -38,9 +64,30 @@ $contentWidh: 1168px/1920px * 100%;
     font-family: $fontFamily1;
 }
 
-@mixin bgImg($bgCol: $whiteColor, $bgImSize: 100% 100%) {
+@mixin bgImg($bgCol: $whiteColor,
+$bgImSize: 100% 100%) {
     background-color: $bgCol;
     background-size: $bgImSize;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+@mixin flexAlJu($jusCon: space-between,
+$alIt: center) {
+    display: flex;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+@mixin gridAlJu($jusCon: space-between,
+$alIt: center) {
+    display: grid;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+@mixin wiHe($wi: 100%,
+$he: 100%) {
+    width: $wi;
+    height: $he;
 }
