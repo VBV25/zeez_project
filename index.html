@@ -8,11 +8,15 @@
     <!--'Стили'-->
     <link rel="stylesheet" href="css/style-index.css" />
     <!--'Скрипты'-->
-    <title>Document</title>
+
+    <!--'Favicon'-->
+    <link type="image/x-icon" href="img/png/icon.png" rel="icon">
+
+    <title>'T ZEEZ TJE</title>
 </head>
 
 <body>
-    <header>
+    <header class="header">
     <div class="container">
         <div class="header__logo">
             <img src="../img/svg/logo-head.svg" alt="logo">
@@ -33,7 +37,8 @@
                 </li>
             </ul>
         </nav>
-        <div class="header__phone"><img src="img/svg/lable-phone-header.svg" alt="">
+        <div class="header__phone">
+            <img src="img/svg/lable-phone-header.svg" alt="">
             <p>+32 9 282 57 25</p>
         </div>
     </div>
@@ -42,86 +47,95 @@
     <!--'1 БЛОК'-->
     <section class="
     demonstration-block">
-        <h3>OPEN EVERYDAY 6AM - 9PM</h3>
-        <h2>A bad day with lunch is better than a good day without it.</h2>
-        <div class="demonstration-block__btn-group">
-            <button class="demonstration-block__btn">Reserve a table</button>
-            <div class="demonstration-block__social-group">
-                <a href="#" class="demonstration-block__fb">1</a>
-                <a href="#" class="demonstration-block__ig">2</a>
-                <a href="#" class="demonstration-block__tw">3</a>
-                <a href="#" class="demonstration-block__yt">4</a>
+        <div class="demonstration-block__conteiner">
+            <h3>OPEN EVERYDAY 6AM - 9PM</h3>
+            <h2>A bad day with lunch is better than a good day without it.</h2>
+            <div class="demonstration-block__btn-group">
+                <button class="demonstration-block__btn">Reserve a table</button>
+                <div class="demonstration-block__social-group">
+                    <a href="#" class="demonstration-block__link demonstration-block__fb"></a>
+                    <a href="#" class="demonstration-block__link demonstration-block__ig"></a>
+                    <a href="#" class="demonstration-block__link demonstration-block__tw"></a>
+                    <a href="#" class="demonstration-block__link demonstration-block__yt"></a>
+                </div>
             </div>
         </div>
     </section>
 
     <!--'2 БЛОК'-->
     <section class="timetable">
-        <div class="timetable__day-block-group">
-            <ul>
-                <li class="timetable__day">
-                    <h4>Woensdag 12/01</h4>
-                    <p>Salade met Serrano <span>...</span> Steak Tartaar</p>
-                </li>
-                <li class="timetable__day">
-                    <h4>Donderdag 13/01</h4>
-                    <p>Toast Roquefort <span>...</span> Penne met Kip en Prei</p>
-                </li>
-                <li class="timetable__day">
-                    <h4>Vrijdag 14/01</h4>
-                    <p>Verrassing van de Chef <span>...</span> Penne met Kip en Prei</p>
-                </li>
-                <li class="timetable__day">
-                    <h4>Vrijdag 15/01</h4>
-                    <p>Verrassing van de Chef <span>...</span> Penne met Kip en Prei</p>
-                </li>
-                <li class="timetable__day">
-                    <h4>Vrijdag 16/01</h4>
-                    <p>Verrassing van de Chef <span>...</span> Penne met Kip en Prei</p>
-                </li>
-            </ul>
-        </div>
-        <div class="timetable__photo-wrapper">
+        <div class="timetable__wrapper">
+            <div class="timetable__day-block-group">
+
+
+                <ul>
+                    <li class="timetable__day">
+                        <h4>Woensdag 12/01</h4>
+                        <p>Salade met Serrano <span><img src="img/svg/points.svg" alt="..."></span> Steak Tartaar</p>
+                    </li>
+                    <li class="timetable__day">
+                        <h4>Donderdag 13/01</h4>
+                        <p>Toast Roquefort <span><img src="img/svg/points.svg" alt="..."></span> Penne met Kip en Prei
+                        </p>
+                    </li>
+                    <li class="timetable__day">
+                        <h4>Vrijdag 14/01</h4>
+                        <p>Verrassing van de Chef <span><img src="img/svg/points.svg" alt="..."></span> Penne met Kip en Prei
+                        </p>
+                    </li>
+                    <li class="timetable__day">
+                        <h4>Vrijdag 15/01</h4>
+                        <p>Verrassing van de Chef <span><img src="img/svg/points.svg" alt="..."></span> Penne met Kip en Prei
+                        </p>
+                    </li>
+                    <li class="timetable__day">
+                        <h4>Vrijdag 16/01</h4>
+                        <p>Verrassing van de Chef <span><img src="img/svg/points.svg" alt="..."></span> Penne met Kip en Prei
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
             <div class="timetable__square"></div>
-            <div class="timetable__photo timetable__photo1">
-                <img src="img/2sect-01.jpg" alt="photo-1">
-            </div>
-            <div class="timetable__photo timetable__photo2">
-                <img src="img/2sect-02.jpg" alt="photo-1">
-            </div>
+
         </div>
     </section>
 
     <!--'3 БЛОК'-->
     <section class="advantages">
-        <!--'Стрелки переключения приемуществ будет через before и after'-->
-        <div class="advantages__container" id="advantages__container-1">
-            <div class="advantages__lable">
-                <img src="img/svg/99.svg" alt="lable">
+        <button type="button" class="advantages__arrow arrow-left" id="arrow-left" disabled></button>
+        <div class="wrapper-gallery-text">
+            <div class="advantages__container">
+                <div class="advantages__block" id="advantages__block-1">
+                    <div class="advantages__lable">
+                        <img src="img/svg/99.svg" alt="lable">
+                    </div>
+                    <h3>Goede service, lekker eten, toffe ambiance</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+                    </p>
+                    <h4>ALAIN HEYNDRICKX</h4>
+                </div>
+                <div class="advantages__block" id="advantages__block-2">
+                    <div class="advantages__lable">
+                        <img src="img/svg/99.svg" alt="lable">
+                    </div>
+                    <h3>TOP</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua...
+                    </p>
+                    <h4>RRR RRRR</h4>
+                </div>
+                <div class="advantages__block" id="advantages__block-3">
+                    <div class="advantages__lable">
+                        <img src="img/svg/99.svg" alt="lable">
+                    </div>
+                    <h3>Text Text Text</h3>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr...
+                    </p>
+                    <h4>Text Text</h4>
+                </div>
             </div>
-            <h3>Goede service, lekker eten, toffe ambiance</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
-            </p>
-            <h4>ALAIN HEYNDRICKX</h4>
         </div>
-        <div class="advantages__container" id="advantages__container-1">
-            <div class="advantages__lable">
-                <img src="img/svg/99.svg" alt="lable">
-            </div>
-            <h3>TOP</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua...
-            </p>
-            <h4>RRR RRRR</h4>
-        </div>
-        <div class="advantages__container" id="advantages__container-1">
-            <div class="advantages__lable">
-                <img src="img/svg/99.svg" alt="lable">
-            </div>
-            <h3>Text Text Text</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr...
-            </p>
-            <h4>Text Text</h4>
-        </div>
+        <button type="button" class="advantages__arrow arrow-right" id="arrow-ridht"></button>
     </section>
 
     <!--'4 БЛОК'-->

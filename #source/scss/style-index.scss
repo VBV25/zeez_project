@@ -1,3 +1,7 @@
+a {
+    color: white;
+}
+
 //обнуление
 @import 'null-style';
 //переменные,шаблоны,миксины
@@ -7,3 +11,275 @@
 body {
     background: $darkGray;
 }
+
+
+/**/
+
+//1 секция
+.demonstration-block {
+    width: 100%;
+    height: 901px;
+    background-image: url('../img/bg-1sect.jpg');
+    @include bgImg($bgImSize: auto);
+    &__conteiner {
+        width: $contentWidh;
+        height: 100%;
+        margin: 0 auto;
+        padding-top: $heHeader + 99px;
+        color: $whiteColor;
+    }
+    h3 {
+        @include fontSize(24px,
+        500,
+        32px);
+        letter-spacing: 0.06em;
+        margin-bottom: 24px;
+    }
+    h2 {
+        @include fontSize(64px,
+        700,
+        88px);
+        margin-bottom: 40px;
+    }
+    &__btn-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__btn {
+        width: 270px;
+        height: 100px;
+        background-color: $blueColor;
+        color: $whiteColor;
+        @include fontSize(18px,
+        500,
+        24px);
+    }
+    &__social-group {
+        display: flex;
+        gap: 25px;
+    }
+    &__link {
+        width: 48px;
+        height: 48px;
+        @include bgImg(none);
+    }
+    &__fb {
+        background-image: url('../img/svg/fb-lable-white.svg');
+    }
+    &__ig {
+        background-image: url('../img/svg/ig-lable-white.svg');
+    }
+    &__tw {
+        background-image: url('../img/svg/tw-lable-white.svg');
+    }
+    &__yt {
+        background-image: url('../img/svg/yt-lable-white.svg');
+    }
+}
+
+//2 секция
+.timetable {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 808px;
+    background-color: $whiteColor;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: $contentWidh;
+        height: 100%;
+    }
+    &__day-block-group ul {
+        min-width: max-content;
+        height: max-content;
+        display: grid;
+        align-items: center;
+        gap: 40px;
+    }
+    &__day {
+        display: grid;
+        gap: 10px;
+        h4 {
+            @include fontSize(24px,
+            600,
+            32px,
+            $blackColor);
+        }
+        p {
+            display: flex;
+            @include fontSize(18px,
+            400,
+            32px,
+            $blackColor);
+            span {
+                padding: 0 12px;
+                width: max-content;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+    &__square {
+        position: relative;
+        display: flex;
+        left: -100px;
+        width: 471px;
+        height: 502px;
+        border: 2px solid $goldColor;
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            width: 323px;
+            height: 486px;
+            @include bgImg;
+        }
+        &::after {
+            top: 85px;
+            left: -97px;
+            background-image: url('../img/2sect-01.jpg');
+        }
+        &::before {
+            top: -51px;
+            right: -100px;
+            background-image: url('../img/2sect-02.jpg');
+        }
+    }
+}
+
+//3 секция
+.advantages {
+    width: 100%;
+    height: 782px;
+    background-color: $blueColor;
+    color: $whiteColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__arrow {
+        margin: 10px;
+        width: 31px;
+        height: 31px;
+        border-top-left-radius: 5px;
+        background-color: $blueColor;
+        border-top: 2px solid $goldColor;
+        border-left: 2px solid $goldColor;
+        &:hover {
+            border-width: 3.5px;
+        }
+        &:disabled {
+            border-color: $darkGray;
+            cursor: default;
+        }
+        &:hover:disabled {
+            border-width: 2px;
+        }
+    }
+    .arrow-left {
+        transform: rotate(-45deg);
+    }
+    .arrow-right {
+        transform: rotate(135deg);
+    }
+    .wrapper-gallery-text {
+        position: relative;
+        border: 2px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 900px;
+        height: max-content;
+        overflow: hidden;
+    }
+    &__container {
+        position: relative;
+        top: 0;
+        left: 900px;
+        box-sizing: content-box;
+        border: 2px solid rgb(0, 174, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        height: max-content;
+    }
+    &__block {
+        padding: 10px 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid rgb(0, 255, 34);
+        width: 900px;
+        height: max-content;
+        h3,
+        p,
+        h4 {
+            text-align: center;
+        }
+    }
+    &__lable {}
+}
+
+
+/*
+//4 секция
+.cafe-menu {
+    &__card {}
+}
+
+.card-menu-1 {}
+
+.card-menu {
+    &__text {}
+    &__line {}
+    &__img {}
+}
+
+.card-menu-2 {}
+
+.card-menu-3 {}
+
+.gallery {
+    &__header {}
+    &__title {}
+    &__text {}
+    &__row {}
+    &__nav {}
+    &__arrow {}
+    &__photo {}
+    &__photo-1 {}
+    &__photo-2 {}
+    &__photo-3 {}
+}
+
+.arrow-forward {}
+
+.arrow-back {}
+
+.info {
+    &__contacts {}
+    &__questions {}
+}
+
+.contacts {
+    &__title {}
+    &__row {}
+    &__lable {}
+    &__text-column {}
+}
+
+.questions {
+    &_title {}
+    &__form {}
+    &__btn {}
+}
+
+.map {
+    &__script {}
+}*/

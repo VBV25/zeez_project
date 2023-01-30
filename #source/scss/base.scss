@@ -1,12 +1,46 @@
 //-----переменные-----
+//цвета
 $darkGray: rgb(100, 100, 100);
+$whiteColor: rgb(255, 255, 255);
+$blueColor: rgb(58, 69, 116);
+$blackColor: rgb(0, 0, 0);
+$goldColor: rgb(211, 180, 127);
+//шрифты
+$fontFamily1: Arial,
+sans-serif; //Poppins
+//размеры
+$heHeader: 165px;
+$contentWidh: 1168px/1920px * 100%;
 //-----шаблоны-----
-%borderTest {
-    border: 2px solid red;
+%WiHe100 {
+    width: 100%;
+    height: 100%;
 }
 
+%LeTo {
+    top: 0;
+    left: 0;
+}
+
+//-------миксины------
 @mixin flCent {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin fontSize($fsiz: 16px, $fWe: 400, $liHe: 24px, $color: $whiteColor) {
+    font-size: $fsiz;
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin bgImg($bgCol: $whiteColor, $bgImSize: 100% 100%) {
+    background-color: $bgCol;
+    background-size: $bgImSize;
+    background-repeat: no-repeat;
+    background-position: center;
 }
