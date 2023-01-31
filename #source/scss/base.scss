@@ -1,4 +1,4 @@
-//------------шрифты--------------------
+//------------шрифты--ПОДКЛЮЧЕНИЕ--------------------------------------
 @font-face {
     font-family: Poppins;
     font-style: normal;
@@ -6,8 +6,9 @@
     src: local('Poppins-Regular'), url('../fonts/Poppins-Regular.ttf') format('truetype');
 }
 
-//-----переменные-----
-//цвета
+//--------------------------------------------------------------------------------
+//-------------------------ПЕРЕМЕННЫЕ---------------------------------------------
+//-цвета-
 $darkGray: rgb(100,
 100,
 100);
@@ -20,6 +21,10 @@ $blueColor: rgb(58,
 $blackColor: rgb(0,
 0,
 0);
+$blackColorOpacity: rgba(0,
+0,
+0,
+0.9);
 $goldColor: rgb(211,
 180,
 127);
@@ -29,29 +34,136 @@ $grayColor: rgb(128,
 $smokeColor: rgb(204,
 204,
 204);
-//шрифты
+//-шрифты-
 $fontFamily1: Poppins,
 Arial,
 sans-serif;
-//размеры
-$heHeader: 165px;
-$contentWidh: 1168px; //1168px/1920px * 100%;
-$galleryImgHe: 646px; //высота зображений в галерее
-$padTop6Block: 101px;
-//-----шаблоны-----
-%LeTo {
-    top: 0;
-    left: 0;
+//-----------------------------------------------------------------------------
+//--------------------------ПЕРЕМЕННЫЕ--изменяемые размеры----------------------------------------
+:root {
+    //размеры шрифтов
+    --fsMenuHead: 16px;
+    --fs24: 24px;
+    --fs32: 32px;
+    --fs36: 36px;
+    //-----хэдер
+    --heHeader: 165px; //высота хедера
+    --menuGapHead: 45px; //расстояние между пунктами меню в хедер
+    //----контент
+    --contentWidh: 1168px; //блок контента
+    --logoHedWe: 269px; //ширина логотипа хедера
+    --logoHedHe: 55px; //высота логотипа хедера
+    //1блок
+    --firstBlokHe: 901px; //высота первой секции
+    --padTopText1Block: 99px; //число для калькуляции верхнего отступа текста от хедера
+    --firstBlockBtnWi: 270px; //Ширина кнопки первой секции
+    --firstBlockBtnHe: 100px; //высота кнопки первой секции
+    //2блок
+    --galleryImgHe: 646px; //высота зображений в галерее
+    --padTop6Block: 101px; //число для калькуляции верхнего отступа 6 блока формы из за смещения галлереи
 }
 
-//----------------------------------------------------------------------------------------------------------------------------------------
-//-------миксины------
-@mixin flCent {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 1250px) {
+     :root {
+        //---хедер
+        --heHeader: 80px;
+        --menuGapHead: 25px;
+        //---контент
+        --contentWidh: 90%;
+        --logoHedWe: 235px;
+        --logoHedHe: 45px;
+        //1блок
+        --padTopText1Block: 70px;
+        --firstBlokHe: max-content;
+        --firstBlockBtnWi: 250px;
+        --firstBlockBtnHe: 80px;
+        //2блок
+        --galleryImgHe: 646px;
+        --padTop6Block: 101px;
+    }
 }
 
+@media (max-width: 1024px) {
+     :root {
+        //---контент
+        --logoHedWe: 225px;
+        --logoHedHe: 42px;
+        //1блок
+        --padTopText1Block: 20px;
+        --firstBlockBtnWi: 170px;
+        --firstBlockBtnHe: 55px;
+    }
+}
+
+@media (max-width: 900px) {
+     :root {
+        //размеры шрифтов
+        --fsMenuHead: 14px;
+        //хедер
+        --menuGapHead: 15px;
+        //контент
+        --logoHedtWe: 170px;
+        --logoHedHe: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+     :root {
+        //
+        --fsMenuHead: 15px;
+        //---хедер
+        --heHeader: 80px;
+        --menuGapHead: 30px;
+        //---контент
+        --logoHedWe: 185px;
+        --logoHedHe: 38px;
+        //1блок
+    }
+}
+
+@media (max-width: 495px) {
+     :root {
+        //
+        --fsMenuHead: 18px;
+        //---контент
+        --contentWidh: 80%;
+        //1блок
+        --padTopText1Block: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+     :root {
+        //---контент
+        --logoHedWe: 85px;
+        --logoHedHe: 25px;
+        //1блок
+    }
+}
+
+//----------------------------------------------------------------------------------------------------
+//-----------------------------------------------миксины----------------------------------------------
+//ширина и высота элемента
+@mixin wiHe($wi: 100%,
+$he: 100%) {
+    width: $wi;
+    height: $he;
+}
+
+//позиционирование
+@mixin leTo($top: 0,
+$left: 0) {
+    top: $top;
+    left: $left;
+}
+
+@mixin riTo($top: 0,
+$right: 0) {
+    top: $top;
+    right: $right;
+}
+
+//параметры шрифта
 @mixin fontSize($fsiz: 16px,
 $fWe: 400,
 $liHe: 24px,
@@ -64,6 +176,7 @@ $color: $whiteColor) {
     font-family: $fontFamily1;
 }
 
+//вставка изображения как фона(без ссылки на изображение)
 @mixin bgImg($bgCol: $whiteColor,
 $bgImSize: 100% 100%) {
     background-color: $bgCol;
@@ -72,6 +185,14 @@ $bgImSize: 100% 100%) {
     background-position: center;
 }
 
+//флекс элемент по центру
+@mixin flCent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//флекс элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin flexAlJu($jusCon: space-between,
 $alIt: center) {
     display: flex;
@@ -79,6 +200,7 @@ $alIt: center) {
     align-items: $alIt;
 }
 
+//грид элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin gridAlJu($jusCon: space-between,
 $alIt: center) {
     display: grid;
@@ -86,8 +208,9 @@ $alIt: center) {
     align-items: $alIt;
 }
 
-@mixin wiHe($wi: 100%,
-$he: 100%) {
-    width: $wi;
-    height: $he;
+//обводка текста
+@mixin textBorderGold {
+    text-shadow: -0 -1px 4px $goldColor, 0 -1px 4px $goldColor, -0 1px 4px $goldColor, 0 1px 4px $goldColor, -1px -0 4px $goldColor, 1px -0 4px $goldColor, -1px 0 4px $goldColor, 1px 0 4px $goldColor, -1px -1px 4px $goldColor, 1px -1px 4px $goldColor, -1px 1px 4px $goldColor, 1px 1px 4px $goldColor, -1px -1px 4px $goldColor, 1px -1px 4px $goldColor, -1px 1px 4px $goldColor, 1px 1px 4px $goldColor;
 }
+
+//----------------------------------------------------------------------------------------------------

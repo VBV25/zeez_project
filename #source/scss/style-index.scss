@@ -1,7 +1,3 @@
-a {
-    color: white;
-}
-
 //обнуление
 @import 'null-style';
 //переменные,шаблоны,миксины
@@ -17,48 +13,56 @@ body {
 
 //1 секция
 .demonstration-block {
-    @include wiHe($he: 901px);
-    background-image: url('../img/bg-1sect.jpg');
-    @include bgImg($bgImSize: auto);
+    @include wiHe($he: var(--firstBlokHe));
+    @include leTo;
+    position: relative;
+    overflow: hidden;
+    //фото кафе
+    &__img {
+        @include wiHe(100%, 100%);
+        @include leTo;
+        z-index: -1;
+        position: absolute;
+    }
+    //обертка
     &__conteiner {
-        @include wiHe($contentWidh);
+        @include wiHe(var(--contentWidh));
         margin: 0 auto;
-        padding-top: $heHeader + 99px;
+        padding-top: calc(var(--heHeader) + var(--padTopText1Block));
+        padding-bottom: calc(var(--padTopText1Block) * 2);
         color: $whiteColor;
     }
+    //график работы
     h3 {
-        @include fontSize(24px,
-        500,
-        32px);
+        @include fontSize(24px, 500, 32px);
         letter-spacing: 0.06em;
         margin-bottom: 24px;
     }
+    //описание
     h2 {
-        @include fontSize(64px,
-        700,
-        88px);
+        @include fontSize(64px, 700, 88px);
         margin-bottom: 40px;
     }
+    //обертка кнопок
     &__btn-group {
         @include flexAlJu;
     }
+    //кнопка брони
     &__btn {
-        @include fontSize(18px,
-        500,
-        24px);
-        @include wiHe(270px,
-        100px);
+        @include fontSize(18px, 500, 24px);
+        @include wiHe(var(--firstBlockBtnWi), var(--firstBlockBtnHe));
         background-color: $blueColor;
         color: $whiteColor;
     }
+    //група ссылок на соц сети
     &__social-group {
         display: flex;
         gap: 25px;
     }
+    //ссылки на соц сети
     &__link {
         @include bgImg(none);
-        @include wiHe(48px,
-        48px);
+        @include wiHe(48px, 48px);
     }
     &__fb {
         background-image: url('../img/svg/fb-lable-white.svg');
@@ -74,6 +78,100 @@ body {
     }
 }
 
+//--
+@media (max-width: 1250px) {
+    .demonstration-block {
+        &__img {
+            @include wiHe(50%,
+            50%);
+            @include leTo(-150px,
+            -250px);
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .demonstration-block {
+        background-color: $whiteColor;
+        &__conteiner {
+            h3 {
+                @include fontSize(18px,
+                600,
+                32px,
+                $blackColor);
+                letter-spacing: 0.04em;
+                margin-bottom: 10px;
+            }
+            h2 {
+                @include fontSize(42px,
+                900,
+                50px,
+                $blackColor);
+                margin-bottom: 30px;
+            }
+        }
+        &__link {
+            @include wiHe(35px,
+            35px);
+        }
+        &__fb {
+            background-image: url('../img/svg/fb-lable-black.svg');
+        }
+        &__ig {
+            background-image: url('../img/svg/ig-lable-black.svg');
+        }
+        &__tw {
+            background-image: url('../img/svg/tw-lable-black.svg');
+        }
+        &__yt {
+            background-image: url('../img/svg/yt-lable-black.svg');
+        }
+        &__img {
+            @include wiHe(var(--contentWidh),
+            auto);
+            z-index: unset;
+            position: static;
+            margin: 0 auto 20px;
+            img {
+                @include wiHe;
+            }
+        }
+    }
+}
+
+@media (max-width: 495px) {
+    .demonstration-block {
+        width: 100%;
+        overflow: hidden;
+        h3 {
+            @include fontSize(16px,
+            600,
+            20px,
+            $blackColor);
+            letter-spacing: 0.04em;
+            margin-bottom: 10px;
+        }
+        //описание
+        h2 {
+            @include fontSize(32px,
+            700,
+            40px,
+            $blackColor);
+            margin-bottom: 20px;
+        }
+        //обертка кнопок
+        &__btn-group {
+            @include flCent;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        //група ссылок на соц сети
+        &__social-group {
+            gap: 20px;
+        }
+    }
+}
+
 //2 секция
 .timetable {
     @include flexAlJu(center);
@@ -81,7 +179,8 @@ body {
     background-color: $whiteColor;
     &__wrapper {
         @include flexAlJu;
-        @include wiHe($contentWidh);
+        @include wiHe(var(--contentWidh));
+        // @include wiHe($contentWidh);
     }
     &__day-block-group ul {
         @include gridAlJu(unset);
@@ -137,7 +236,18 @@ body {
             background-image: url('../img/2sect-02.jpg');
         }
     }
+} //--
+@media (max-width: 1250px) {
+    .timetable {
+        display: none;
+    }
 }
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
 
 //3 секция
 .advantages {
@@ -223,6 +333,19 @@ body {
     }
 }
 
+//--
+@media (max-width: 1250px) {
+    .advantages {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
+
 //4 секция
 .cafe-menu {
     @include gridAlJu(center);
@@ -271,6 +394,19 @@ body {
 .card-menu-2 {
     flex-direction: row-reverse;
 }
+
+//--
+@media (max-width: 1250px) {
+    .cafe-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
 
 //5 секция
 .gallery {
@@ -340,16 +476,31 @@ body {
     }
     &__photo {
         @include wiHe(970px,
-        $galleryImgHe);
+        var(--galleryImgHe));
+        // @include wiHe(970px,$galleryImgHe);
     }
 }
+
+//--
+@media (max-width: 1250px) {
+    .gallery {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
 
 //6 секция
 .info {
     @include wiHe($he: max-content);
     @include flexAlJu(center);
     background-color: $whiteColor;
-    padding-top: $galleryImgHe/ 2 + $padTop6Block;
+    padding-top: calc(var(--galleryImgHe) / 2 + var(--padTop6Block));
+    //padding-top: $galleryImgHe/ 2 + $padTop6Block;
     padding-bottom: 25px;
     &__container {
         @include wiHe(1170px,
@@ -437,6 +588,19 @@ body {
     }
 }
 
+//--
+@media (max-width: 1250px) {
+    .info {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
+
 //7 секция
 .map {
     @include wiHe($he: max-content);
@@ -448,3 +612,16 @@ body {
         547px);
     }
 }
+
+//--
+@media (max-width: 1250px) {
+    .map {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px) {}
+
+@media (max-width: 767px) {}
+
+@media (max-width: 480px) {}
