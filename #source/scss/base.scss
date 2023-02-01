@@ -38,14 +38,17 @@ $smokeColor: rgb(204,
 $fontFamily1: Poppins,
 Arial,
 sans-serif;
-//-----------------------------------------------------------------------------
-//--------------------------ПЕРЕМЕННЫЕ--изменяемые размеры----------------------------------------
+//-------------ПЕРЕМЕННЫЕ--изменяемые--pазмеры----------------------------------------
 :root {
-    //размеры шрифтов
-    --fsMenuHead: 16px;
-    --fs24: 24px;
-    --fs32: 32px;
-    --fs36: 36px;
+    //--------размеры шрифтов
+    --fsMenuHead: 16px; //размер шрифта в хедер
+    --fsH2: 44px; //заголовки h2
+    --liHeH2: 88px; //высота строки заголовока H2
+    --fsH3: 36px; //Заголовки h3
+    --fsH4: 24px; //Заголовки h4
+    --fsH5: 18px; //Заголовки h5
+    --fsP: 16px; //текст и блоки P
+    //---------------
     //-----хэдер
     --heHeader: 165px; //высота хедера
     --menuGapHead: 45px; //расстояние между пунктами меню в хедер
@@ -53,95 +56,22 @@ sans-serif;
     --contentWidh: 1168px; //блок контента
     --logoHedWe: 269px; //ширина логотипа хедера
     --logoHedHe: 55px; //высота логотипа хедера
-    //1блок
+    //------1блок
     --firstBlokHe: 901px; //высота первой секции
     --padTopText1Block: 99px; //число для калькуляции верхнего отступа текста от хедера
     --firstBlockBtnWi: 270px; //Ширина кнопки первой секции
     --firstBlockBtnHe: 100px; //высота кнопки первой секции
-    //2блок
+    //------2блок
+    --timetableHe: 808px; //высота второй секции
+    --squareWi: 471px; //ширина рамочного квадрата во втором блоке
+    --squareHe: 501px; //Высота рамочного квадрата во втором блоке
+    --photoSquareWi: 323px; //ширина фото в квадрате во втором блоке
+    --photoSquareHe: 486px; //высота фото в квадрате во втором блоке(1.51)
+    //----6блок
     --galleryImgHe: 646px; //высота зображений в галерее
     --padTop6Block: 101px; //число для калькуляции верхнего отступа 6 блока формы из за смещения галлереи
 }
 
-@media (max-width: 1250px) {
-     :root {
-        //---хедер
-        --heHeader: 80px;
-        --menuGapHead: 25px;
-        //---контент
-        --contentWidh: 90%;
-        --logoHedWe: 235px;
-        --logoHedHe: 45px;
-        //1блок
-        --padTopText1Block: 70px;
-        --firstBlokHe: max-content;
-        --firstBlockBtnWi: 250px;
-        --firstBlockBtnHe: 80px;
-        //2блок
-        --galleryImgHe: 646px;
-        --padTop6Block: 101px;
-    }
-}
-
-@media (max-width: 1024px) {
-     :root {
-        //---контент
-        --logoHedWe: 225px;
-        --logoHedHe: 42px;
-        //1блок
-        --padTopText1Block: 20px;
-        --firstBlockBtnWi: 170px;
-        --firstBlockBtnHe: 55px;
-    }
-}
-
-@media (max-width: 900px) {
-     :root {
-        //размеры шрифтов
-        --fsMenuHead: 14px;
-        //хедер
-        --menuGapHead: 15px;
-        //контент
-        --logoHedtWe: 170px;
-        --logoHedHe: 32px;
-    }
-}
-
-@media (max-width: 767px) {
-     :root {
-        //
-        --fsMenuHead: 15px;
-        //---хедер
-        --heHeader: 80px;
-        --menuGapHead: 30px;
-        //---контент
-        --logoHedWe: 185px;
-        --logoHedHe: 38px;
-        //1блок
-    }
-}
-
-@media (max-width: 495px) {
-     :root {
-        //
-        --fsMenuHead: 18px;
-        //---контент
-        --contentWidh: 80%;
-        //1блок
-        --padTopText1Block: 10px;
-    }
-}
-
-@media (max-width: 320px) {
-     :root {
-        //---контент
-        --logoHedWe: 85px;
-        --logoHedHe: 25px;
-        //1блок
-    }
-}
-
-//----------------------------------------------------------------------------------------------------
 //-----------------------------------------------миксины----------------------------------------------
 //ширина и высота элемента
 @mixin wiHe($wi: 100%,
@@ -163,17 +93,16 @@ $right: 0) {
     right: $right;
 }
 
-//параметры шрифта
-@mixin fontSize($fsiz: 16px,
-$fWe: 400,
-$liHe: 24px,
-$color: $whiteColor) {
-    font-size: $fsiz;
-    font-weight: $fWe;
-    line-height: $liHe;
-    color: $color;
-    font-style: normal;
-    font-family: $fontFamily1;
+@mixin riBo($bottom: 0,
+$right: 0) {
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin leBo($bottom: 0,
+$left: 0) {
+    bottom: $bottom;
+    left: $left;
 }
 
 //вставка изображения как фона(без ссылки на изображение)
@@ -186,10 +115,19 @@ $bgImSize: 100% 100%) {
 }
 
 //флекс элемент по центру
-@mixin flCent {
+@mixin flCent($jusCon: center,
+$alIt: center) {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//флекс элемент слева снизу
+@mixin flStCen($jusCon: start,
+$alIt: center) {
+    display: flex;
+    justify-content: $jusCon;
+    align-items: $alIt;
 }
 
 //флекс элемент: по вертикали центр, горизонтально - разнесено по краям
@@ -211,6 +149,70 @@ $alIt: center) {
 //обводка текста
 @mixin textBorderGold {
     text-shadow: -0 -1px 4px $goldColor, 0 -1px 4px $goldColor, -0 1px 4px $goldColor, 0 1px 4px $goldColor, -1px -0 4px $goldColor, 1px -0 4px $goldColor, -1px 0 4px $goldColor, 1px 0 4px $goldColor, -1px -1px 4px $goldColor, 1px -1px 4px $goldColor, -1px 1px 4px $goldColor, 1px 1px 4px $goldColor, -1px -1px 4px $goldColor, 1px -1px 4px $goldColor, -1px 1px 4px $goldColor, 1px 1px 4px $goldColor;
+}
+
+//параметры шрифтов
+@mixin fontSize($fs: 16px,
+$fWe: 400,
+$liHe: 24px,
+$color: $whiteColor) {
+    font-size: $fs;
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeP($fWe: 400,
+$color: $blackColor) {
+    font-size: var(--fsP);
+    font-weight: $fWe;
+    line-height: calc(var(--fsP) * 2);
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH5($fWe: 400,
+$color: $blackColor) {
+    font-size: var(--fsH5);
+    font-weight: $fWe;
+    line-height: calc(var(--fsH5) * 1.78);
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH4($fWe: 500,
+$color: $blackColor) {
+    font-size: var(--fsH4);
+    font-weight: $fWe;
+    line-height: calc(var(--fsH4) * 1.33);
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH3($fWe: 600,
+$color: $blackColor) {
+    font-size: var(--fsH3);
+    font-weight: $fWe;
+    line-height: calc(var(--fsH3) * 1.11);
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
+}
+
+@mixin fontSizeH2($fWe: 700,
+$liHe: var(--liHeH2),
+$color: $blackColor) {
+    font-size: var(--fsH2);
+    font-weight: $fWe;
+    line-height: $liHe;
+    color: $color;
+    font-style: normal;
+    font-family: $fontFamily1;
 }
 
 //----------------------------------------------------------------------------------------------------

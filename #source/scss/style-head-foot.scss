@@ -226,17 +226,19 @@
             @include wiHe;
             top: -100%;
             z-index: 100;
-            position: absolute;
+            position: fixed;
             background-color: $blackColorOpacity;
             /**/
             transition: all 0.8s ease 0s;
+            /*добавить скролл меню для горизонталки*/
+            overflow: auto;
         }
         //телефон
         &__phone-text {
-            @include wiHe(400px,
+            @include wiHe(310px,
             100px);
             @include flCent;
-            @include fontSize(48px,
+            @include fontSize(38px,
             bold,
             70px,
             $blackColor);

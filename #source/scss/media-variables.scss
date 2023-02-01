@@ -1,0 +1,101 @@
+@media (max-width: 1250px) {
+     :root {
+        //---хедер
+        --heHeader: 80px; //выс.хед
+        --menuGapHead: 25px; //промежуток между ссыл.меню.хедер
+        //---контент
+        --contentWidh: 90%; //шир.контент.части в блок.
+        --logoHedWe: 235px; //шир.логотип
+        --logoHedHe: 45px; //выс.логотип
+        //1блок
+        --padTopText1Block: 70px; //отст.верхн.от хедера 1секция
+        --firstBlokHe: max-content; //выс.перв.секц
+        --firstBlockBtnWi: 250px; //шир.кнопки
+        --firstBlockBtnHe: 80px; //выс.кнопки
+        //2блок
+        --timetableHe: 708px; //выс.втор.секц
+        --squareWi: 30%; //шир.квадрата.рамки
+        --squareHe: calc(var(--squareWi) * 1.8658); //выс.квадрата.рамки
+        --photoSquareWi: 75%; //шир.фото2секц
+        --photoSquareHe: calc(var(--photoSquareWi) * 1.165); //выс.фото2секц
+        //5блок
+        --galleryImgHe: 646px; //выс.фото в галерее
+        //6блок
+        --padTop6Block: 101px; //отступ верх.от галереи
+    }
+}
+
+@media (max-width: 1024px) {
+     :root {
+        //---контент
+        --logoHedWe: 225px; //шир.логотип
+        --logoHedHe: 42px; //выс.логотип
+        //1блок
+        --padTopText1Block: 20px; //отст.верхн.от хедера 1секция
+        --firstBlockBtnWi: 170px; //шир.кнопки
+        --firstBlockBtnHe: 55px; //выс.кнопки
+        //2блок
+        --timetableHe: 488px; //выс.втор.секц
+        --squareWi: 30%; //шир.квадрата.рамки
+        --photoSquareWi: 75%; //шир.фото2секц
+    }
+}
+
+@media (max-width: 900px) {
+     :root {
+        //размеры шрифтов
+        --fsMenuHead: 14px; //----размер шрифта в хедер
+        --fsH2: 42px; //заголовки h2
+        --liHeH2: 88px; //высота строки заголовока H2
+        --fsH3: 34px; //Заголовки h3
+        --fsH4: 22px; //Заголовки h4
+        --fsH5: 16px; //Заголовки h5
+        --fsP: 14px; //текст и блоки P
+        //хедер
+        --menuGapHead: 15px; //промежуток между ссыл.меню.хедер
+        //контент
+        --logoHedWe: 170px; //шир.логотип
+        --logoHedHe: 32px; //выс.логотип
+    }
+}
+
+@media (max-width: 767px) {
+     :root {
+        //
+        --fsMenuHead: 15px; //----размер шрифта в хедер
+        //---хедер
+        --heHeader: 80px; //выс.хед
+        --menuGapHead: 30px; //промежуток между ссыл.меню.хедер
+        //---контент
+        --logoHedWe: 185px; //шир.логотип
+        --logoHedHe: 38px; //выс.логотип
+        //2блок
+        --squareWi: 150px; //шир.квадрата.рамки
+        --photoSquareWi: 160px; //шир.фото2секц
+        --photoSquareHe: calc(var(--photoSquareWi) * 1.5); //выс.фото2секц
+    }
+}
+
+@media (max-width: 495px) {
+     :root {
+        //
+        --fsMenuHead: 18px; //----размер шрифта в хедер
+        //---контент
+        --contentWidh: 80%; //шир.контент.части в блок.
+        //1блок
+        --padTopText1Block: 10px; //отст.верхн.от хедера 1секция
+        //2блок
+        --squareWi: 150px; //шир.квадрата.рамки
+        --photoSquareWi: 115px; //шир.фото2секц
+        --photoSquareHe: calc(var(--photoSquareWi) * 1.5); //выс.фото2секц
+    }
+}
+
+@media (max-width: 320px) {
+     :root {
+        //---контент
+        --logoHedWe: 85px; //шир.логотип
+        --logoHedHe: 25px; //выс.логотип
+        //1блок
+    }
+}
