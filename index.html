@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--'Стили'-->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style-index.css" />
     <!--'Скрипты'-->
     <script src="js/jquery-3.6.0.min.js"></script>
+
     <script src="js/script.js"></script>
     <!--'Favicon'-->
     <link type="image/x-icon" href="img/png/icon.png" rel="icon">
@@ -122,10 +124,12 @@
 
         <!--'3 БЛОК'-->
         <section class="advantages">
-            <button type="button" class="advantages__arrow arrow-left" id="arrow-left" disabled></button>
-            <div class="wrapper-gallery-text">
-                <div class="advantages__container">
-                    <div class="advantages__block visible" id="advantages__block-1 ">
+
+            <div class="wrapper-gallery-text swiper-container">
+                <div class="advantages__container swiper-wrapper">
+                    <!--'1слайд'-->
+                    <div class="advantages__slide swiper-slide">
+
                         <div class="advantages__lable">
                             <img src="img/svg/99.svg" alt="lable">
                         </div>
@@ -135,7 +139,9 @@
                         </p>
                         <h4>ALAIN HEYNDRICKX</h4>
                     </div>
-                    <div class="advantages__block" id="advantages__block-2">
+                    <!--'2слайд'-->
+                    <div class="advantages__slide swiper-slide">
+
                         <div class="advantages__lable">
                             <img src="img/svg/99.svg" alt="lable">
                         </div>
@@ -144,7 +150,9 @@
                         </p>
                         <h4>RRR RRRR</h4>
                     </div>
-                    <div class="advantages__block" id="advantages__block-3">
+                    <!--'3слайд'-->
+                    <div class="advantages__slide swiper-slide">
+
                         <div class="advantages__lable">
                             <img src="img/svg/99.svg" alt="lable">
                         </div>
@@ -154,8 +162,10 @@
                         <h4>Text Text</h4>
                     </div>
                 </div>
+                <div class=" swiper-button-prev"></div>
+                <div class=" swiper-button-next"></div>
             </div>
-            <button type="button" class="advantages__arrow arrow-right" id="arrow-ridht"></button>
+
         </section>
 
         <!--'4 БЛОК'-->
@@ -315,7 +325,9 @@
 </footer>
 
 
-
+    <!--'SWIPER'-->
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/swiper.js"></script>
 
 </body>
 

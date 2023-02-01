@@ -379,68 +379,36 @@ main {
     @include wiHe($he: 782px);
     @include flexAlJu(center);
     background-color: $blueColor;
-    &__arrow {
-        @include wiHe(31px,
-        31px);
-        margin: 80px;
-        border-top-left-radius: 5px;
-        background-color: $blueColor;
-        border-top: 2px solid $goldColor;
-        border-left: 2px solid $goldColor;
-        &:hover {
-            border-width: 3.5px;
-        }
-        &:disabled {
-            border-color: $darkGray;
-            cursor: default;
-        }
-        &:hover:disabled {
-            border-width: 2px;
-        }
-    }
-    .arrow-left {
-        transform: rotate(-45deg);
-    }
-    .arrow-right {
-        transform: rotate(135deg);
+    min-width: 0;
+    .wrapper-gallery-text .swiper-button-prev::after,
+    .wrapper-gallery-text .swiper-button-next::after {
+        color: $goldColor;
     }
     .wrapper-gallery-text {
-        @include wiHe(900px,
+        @include wiHe(var(--contentWidh),
         max-content);
-        @include flexAlJu(center);
-        position: relative;
-        overflow: hidden;
     }
-    &__container {
-        @include wiHe(max-content,
-        max-content);
-        @include flexAlJu(center);
-        position: relative;
-        top: 0;
-        left: 900px;
-        box-sizing: content-box;
-    }
-    &__block {
-        @include wiHe(900px,
-        max-content);
-        @include flexAlJu(center);
-        flex-direction: column;
-        padding: 10px 55px;
+    &__slide {
+        box-sizing: border-box;
+        width: 80%;
         h3,
         p,
         h4 {
+            width: 70%;
+            display: block;
             text-align: center;
         }
         h3 {
             @include fontSizeH3($color: $goldColor);
-            margin-bottom: 20px;
+            margin: 0 auto 20px;
         }
         p {
             @include fontSizeP($color: $whiteColor);
-            margin-bottom: 40px;
+            margin: 0 auto 40px;
         }
         h4 {
             @include fontSizeH4($color: $goldColor);
+            margin: 0 auto;
             text-transform: uppercase;
             letter-spacing: 0.245em;
         }
@@ -448,22 +416,72 @@ main {
     &__lable {
         @include wiHe(83px,
         58px);
-        margin-bottom: 34px;
+        margin: 0px auto 34px;
+        img {
+            @include wiHe;
+        }
     }
 }
 
 //--
 @media (max-width: 1250px) {
     .advantages {
-        display: none;
+        @include wiHe($he: max-content);
+        padding: 70px 0;
     }
 }
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    .advantages {
+        padding: 50px 0;
+        .wrapper-gallery-text {
+            @include wiHe(90vw,
+            max-content);
+        }
+        &__slide {
+            h3,
+            p,
+            h4 {
+                @include flCent;
+                width: 70vw;
+            }
+            h3 {
+                min-height: 75px;
+            }
+            p {
+                min-height: 112px;
+            }
+            h4 {
+                min-height: 30px;
+            }
+        }
+        &__lable {
+            @include wiHe(65px,
+            65px);
+        }
+    }
+}
 
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+    .advantages {
+        padding: 30px 0;
+    }
+}
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+    .advantages {
+        .wrapper-gallery-text {
+            @include wiHe(98vw);
+        }
+        &__slide {
+            h3,
+            p,
+            h4 {
+                width: 67vw;
+            }
+        }
+    }
+}
 
 //4 секция
 .cafe-menu {
