@@ -6,6 +6,8 @@
         z-index: 150;
         position: fixed;
         background-color: $blackColorOpacity;
+        /**/
+        transition: all 0.4s ease 0s;
         /*добавить скролл меню для горизонталки*/
         overflow: auto;
     }
@@ -139,6 +141,10 @@
         padding: 10px 45px;
         background-color: $blueColor;
         border-radius: 5px;
+        &:hover {
+            box-shadow: 0 0 10px 1px $goldColor;
+            color: $goldColor;
+        }
     }
 }
 

@@ -26,7 +26,7 @@ body.lock {
 .visible {
     top: 0;
     /**/
-    transition: all 0.8s ease 0s;
+    transition: all 0.4s ease 0s;
 }
 
 main {
@@ -52,7 +52,6 @@ main {
         margin: 0 auto;
         padding-top: calc(var(--heHeader) + var(--padTopText1Block));
         padding-bottom: calc(var(--padTopText1Block) * 2);
-        color: $whiteColor;
     }
     //график работы
     h4 {
@@ -73,8 +72,24 @@ main {
     &__btn {
         @include fontSizeH5($color: $whiteColor);
         @include wiHe(var(--firstBlockBtnWi), var(--firstBlockBtnHe));
-        background-color: $blueColor;
-        color: $whiteColor;
+        position: relative;
+        background-color: $goldColor;
+        &::after {
+            @include fontSizeH5($color: $whiteColor);
+            @include flCent;
+            @include wiHe(var(--firstBlockBtnWi), var(--firstBlockBtnHe));
+            @include leTo;
+            content: 'Reserve a table';
+            position: absolute;
+            background-color: $blueColor;
+        }
+        /* &:hover::after {
+            @include leTo(-2px);
+        }*/
+        &:hover::after {
+            box-shadow: 0 0 10px 1px $goldColor;
+            color: $goldColor;
+        }
     }
     //група ссылок на соц сети
     &__social-group {
@@ -85,18 +100,36 @@ main {
     &__link {
         @include bgImg(none);
         @include wiHe(48px, 48px);
+        border-radius: 50%;
+        color: $whiteColor;
+        &:hover {
+            box-shadow: 0 0 5px 0px $goldColorOpacity;
+            background-color: $goldColorOpacity;
+        }
     }
     &__fb {
         background-image: url('../img/svg/fb-lable-white.svg');
+        &:hover {
+            background-image: url('../img/svg/fb-lable-black.svg');
+        }
     }
     &__ig {
         background-image: url('../img/svg/ig-lable-white.svg');
+        &:hover {
+            background-image: url('../img/svg/ig-lable-black.svg');
+        }
     }
     &__tw {
         background-image: url('../img/svg/tw-lable-white.svg');
+        &:hover {
+            background-image: url('../img/svg/tw-lable-black.svg');
+        }
     }
     &__yt {
         background-image: url('../img/svg/yt-lable-white.svg');
+        &:hover {
+            background-image: url('../img/svg/yt-lable-black.svg');
+        }
     }
 }
 
@@ -132,18 +165,34 @@ main {
         &__link {
             @include wiHe(35px,
             35px);
+            &:hover {
+                box-shadow: 0 0 5px 2px $goldColor;
+                background-color: $blueColorOpacity08;
+            }
         }
         &__fb {
             background-image: url('../img/svg/fb-lable-black.svg');
+            &:hover {
+                background-image: url('../img/svg/fb-lable-white.svg');
+            }
         }
         &__ig {
             background-image: url('../img/svg/ig-lable-black.svg');
+            &:hover {
+                background-image: url('../img/svg/ig-lable-white.svg');
+            }
         }
         &__tw {
             background-image: url('../img/svg/tw-lable-black.svg');
+            &:hover {
+                background-image: url('../img/svg/tw-lable-white.svg');
+            }
         }
         &__yt {
             background-image: url('../img/svg/yt-lable-black.svg');
+            &:hover {
+                background-image: url('../img/svg/yt-lable-white.svg');
+            }
         }
         &__img {
             @include wiHe(var(--contentWidh),
@@ -183,6 +232,22 @@ main {
         //група ссылок на соц сети
         &__social-group {
             gap: 20px;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .demonstration-block {
+        &__conteiner {
+            h4 {
+                margin-bottom: 5px;
+            }
+        }
+        &__text {
+            @include fontSize(30px,
+            900,
+            40px,
+            $color: $blackColor);
         }
     }
 }
@@ -301,6 +366,7 @@ main {
         @include wiHe($he: max-content);
         //обертка
         &__wrapper {
+            @include flCent;
             flex-wrap: wrap;
         }
         //обертка списка
@@ -384,6 +450,39 @@ main {
     }
 }
 
+@media (max-width: 320px) {
+    .timetable {
+        overflow: hidden;
+        //обертка списка
+        &__day-block-group ul {
+            width: 80vw;
+        }
+        &__day {
+            margin: 5px auto;
+            h4 {
+                text-align: center;
+            }
+            h5 {
+                text-align: center;
+                span {
+                    margin: 3px auto;
+                }
+            }
+        }
+        &__square {
+            margin: 50px 0;
+            &::after {
+                @include leBo(-25px,
+                -25px);
+            }
+            &::before {
+                @include riTo(-25px,
+                -25px);
+            }
+        }
+    }
+}
+
 //-------------------------------------------------
 //-------------------------------------------------
 //-------------------------------------------------
@@ -394,10 +493,16 @@ main {
     @include flexAlJu(center);
     background-color: $blueColor;
     min-width: 0;
+    //----------Кнопки слайдера---------------
     .wrapper-gallery-text .swiper-button-prev::after,
     .wrapper-gallery-text .swiper-button-next::after {
         color: $goldColor;
     }
+    .wrapper-gallery-text .swiper-button-prev:hover::after,
+    .wrapper-gallery-text .swiper-button-next:hover::after {
+        @include textBorderBlack;
+    }
+    //---------------------
     .wrapper-gallery-text {
         @include wiHe(var(--contentWidh),
         max-content);
@@ -514,23 +619,41 @@ main {
     }
 }
 
+@media (max-width: 320px) {
+    .advantages {
+        .wrapper-gallery-text {}
+        &__slide {
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
 //-------------------------------------------------
 //-------------------------------------------------
 //-------------------------------------------------
 //-------------------------------------------------
 //4 секция
 .cafe-menu {
-    @include gridAlJu(center);
-    width: 100%;
-    gap: 30px;
+    @include wiHe($he: max-content);
+    @include flCent;
     padding: 114px 0px 80px;
     background-color: $whiteColor;
+    &__wrapper {
+        @include gridCent;
+        @include wiHe(var(--contentWidh),
+        max-content);
+        gap: 30px;
+    }
     &__card {
-        width: 1168px;
+        @include wiHe;
         @include flexAlJu;
+        gap: 30px;
     }
 }
 
+//каточки
 .card-menu {
     display: flex;
     justify-content: space-between;
@@ -543,20 +666,22 @@ main {
         p {
             @include fontSizeP($color: $grayColor);
             display: flex;
-            width: 470px;
+            width: 100%;
             margin-top: 16px;
         }
     }
     &__line {
         @include wiHe(108px,
         2px);
+        background-color: $goldColor;
         position: relative;
-        top: 4;
-        left: -54px;
+        left: -35px;
     }
     &__img {
-        @include wiHe(670px,
-        560px);
+        img {
+            @include wiHe(670px,
+            560px);
+        }
     }
 }
 
@@ -567,16 +692,76 @@ main {
 //--
 @media (max-width: 1250px) {
     .cafe-menu {
-        display: none;
+        padding: 80px 0px;
+        &__wrapper {
+            gap: 20px;
+        }
+        &__card {
+            gap: 20px;
+        }
+    }
+    //каточки
+    .card-menu {
+        gap: 4%;
+        &__text {
+            width: 48%;
+        }
+        &__line {
+            left: -15px;
+        }
+        &__img {
+            width: 48%;
+            img {
+                @include wiHe($he: auto);
+            }
+        }
     }
 }
 
-@media (max-width: 1024px) {}
+@media (max-width: 767px) {
+    //каточки
+    .card-menu {
+        &__line {
+            left: -25px;
+        }
+    }
+}
 
-@media (max-width: 767px) {}
+@media (max-width: 495px) {
+    .cafe-menu {
+        padding: 40px 0px;
+        &__wrapper {
+            gap: 20px;
+        }
+        &__card {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+    }
+    //каточки
+    .card-menu {
+        gap: 10px;
+        &__text {
+            width: 85%;
+        }
+        &__line {
+            margin: 10px auto 0;
+            left: unset;
+        }
+        &__img {
+            width: 85%;
+            img {
+                @include wiHe($he: auto);
+            }
+        }
+    }
+}
 
-@media (max-width: 480px) {}
-
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
 //5 секция
 .gallery {
     @include wiHe($he: 605px);

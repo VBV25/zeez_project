@@ -24,6 +24,9 @@
     //ссылки
     &__link {
         @include fontSize(var(--fsMenuHead));
+        &:hover {
+            color: $goldColor;
+        }
     }
     //контактный телефон
     &__phone {
@@ -164,7 +167,7 @@
             position: fixed;
             background-color: $blueColor;
             /**/
-            transition: all 0.3s ease 0s;
+            transition: all 0.4s ease 0s;
             /*добавить скролл меню для горизонталки*/
             overflow: auto;
             //----отображение мобильного меню
@@ -225,7 +228,7 @@
             position: fixed;
             background-color: $blackColorOpacity;
             /**/
-            transition: all 0.8s ease 0s;
+            transition: all 0.4s ease 0s;
             /*добавить скролл меню для горизонталки*/
             overflow: auto;
         }
@@ -237,10 +240,10 @@
             @include fontSize(38px,
             bold,
             70px,
-            $blackColor);
+            $whiteColor);
             margin: 150px auto;
-            background-color: $goldColor;
-            text-shadow: 0px 5px 5px $darkGray;
+            background-color: $blueColor;
+            text-shadow: 1.5px 2px 2px $goldColor;
         }
         //кнопка закрытия
         &__btn-close-phone {
@@ -365,18 +368,35 @@
         @include wiHe(48px,
         48px);
         @include bgImg(unset);
+        border-radius: 50%;
+        &:hover {
+            box-shadow: 0 0 5px 2px $goldColor;
+            background-color: $blueColorOpacity08;
+        }
     }
     &__fb {
         background-image: url('../img/svg/fb-lable-black.svg');
+        &:hover {
+            background-image: url('../img/svg/fb-lable-white.svg');
+        }
     }
     &__ig {
         background-image: url('../img/svg/ig-lable-black.svg');
+        &:hover {
+            background-image: url('../img/svg/ig-lable-white.svg');
+        }
     }
     &__tw {
         background-image: url('../img/svg/tw-lable-black.svg');
+        &:hover {
+            background-image: url('../img/svg/tw-lable-white.svg');
+        }
     }
     &__yt {
         background-image: url('../img/svg/yt-lable-black.svg');
+        &:hover {
+            background-image: url('../img/svg/yt-lable-white.svg');
+        }
     }
 }
 
