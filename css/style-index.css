@@ -105,6 +105,7 @@ h6 {
 
 @media (max-width: 1024px) {
   :root {
+    --liHeH2: 52px;
     --logoHedWe: 225px;
     --logoHedHe: 42px;
     --padTopText1Block: 20px;
@@ -120,7 +121,7 @@ h6 {
   :root {
     --fsMenuHead: 14px;
     --fsH2: 42px;
-    --liHeH2: 52px;
+    --liHeH2: 48px;
     --fsH3: 34px;
     --fsH4: 22px;
     --fsH5: 16px;
@@ -174,7 +175,8 @@ h6 {
     --fsP: 12px;
     --logoHedWe: 85px;
     --logoHedHe: 25px;
-    --galleryImgHe: 150px; } }
+    --galleryImgHe: 150px;
+    --padTop6Block: 20px; } }
 
 @media (max-width: 230px) {
   :root {
@@ -671,7 +673,6 @@ h6 {
   -ms-grid-rows: 1fr 25px 5fr;
   grid-template-rows: 1fr 5fr;
   row-gap: 25px;
-  border-radius: 20px;
   background-color: white; }
 
 .popup-reserv__btn-close {
@@ -782,10 +783,9 @@ h6 {
     font-style: normal;
     font-family: Poppins, Arial, sans-serif;
     text-align: center;
-    border: 2px solid #d3b47f;
-    border-radius: 5px; }
+    border: 1px solid #cccccc; }
   .popup-reserv__form input:hover {
-    border-color: rgba(58, 69, 116, 0.6); }
+    border-color: #d3b47f; }
   .popup-reserv__form input:focus {
     border-color: #3a4574; }
   .popup-reserv__form textarea {
@@ -796,10 +796,9 @@ h6 {
     font-style: normal;
     font-family: Poppins, Arial, sans-serif;
     height: 120px;
-    border: 2px solid #d3b47f;
-    border-radius: 5px; }
+    border: 1px solid #cccccc; }
   .popup-reserv__form textarea:hover {
-    border-color: rgba(58, 69, 116, 0.6); }
+    border-color: #d3b47f; }
   .popup-reserv__form textarea:focus {
     border-color: #3a4574; }
 
@@ -902,8 +901,7 @@ h6 {
   font-style: normal;
   font-family: Poppins, Arial, sans-serif;
   padding: 10px 45px;
-  background-color: #3a4574;
-  border-radius: 5px; }
+  background-color: #3a4574; }
   .popup-reserv__btn:hover {
     -webkit-box-shadow: 0 0 10px 1px #d3b47f;
     box-shadow: 0 0 10px 1px #d3b47f;
@@ -931,7 +929,6 @@ h6 {
     height: 97%;
     padding: 100px 20px 50px;
     row-gap: unset;
-    border-radius: 10px;
     /*добавить скролл меню для горизонталки*/
     overflow: auto; }
   .popup-reserv__btn-close {
@@ -964,8 +961,7 @@ h6 {
     font-family: Poppins, Arial, sans-serif;
     margin-top: 5px;
     padding: 7px 35px;
-    background-color: #3a4574;
-    border-radius: 5px; }
+    background-color: #3a4574; }
   .popup-reserv__name-container {
     -ms-grid-row: 1;
     -ms-grid-column: 1; }
@@ -992,7 +988,6 @@ h6 {
     width: 90%;
     height: 90%;
     padding: 50px 20px 5px;
-    border-radius: 10px;
     /*добавить скролл меню для горизонталки*/
     overflow: auto; }
   .popup-reserv__btn-close {
@@ -1918,7 +1913,6 @@ main {
     width: 90%;
     margin: auto; }
   .gallery__nav {
-    border: 2px solid #d9ff00;
     left: unset;
     top: 0;
     margin: 50px auto; }
@@ -1939,7 +1933,6 @@ main {
     top: 84%; } }
 
 .info {
-  overflow: hidden;
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -2048,6 +2041,10 @@ main {
           height: 80px;
           border: 1px solid #cccccc;
           padding: 28px 16px; }
+          .info__questions .questions__form label input:hover {
+            border-color: #d3b47f; }
+          .info__questions .questions__form label input:focus {
+            border-color: #3a4574; }
         .info__questions .questions__form label textarea {
           width: 670px;
           height: -webkit-max-content;
@@ -2055,6 +2052,10 @@ main {
           height: max-content;
           border: 1px solid #cccccc;
           padding: 28px 16px; }
+          .info__questions .questions__form label textarea:hover {
+            border-color: #d3b47f; }
+          .info__questions .questions__form label textarea:focus {
+            border-color: #3a4574; }
     .info__questions .questions__btn {
       width: 270px;
       height: 100px;
@@ -2065,6 +2066,198 @@ main {
       font-style: normal;
       font-family: Poppins, Arial, sans-serif;
       background-color: #3a4574; }
+      .info__questions .questions__btn:hover {
+        -webkit-box-shadow: 0 0 10px 1px #d3b47f;
+        box-shadow: 0 0 10px 1px #d3b47f;
+        color: #d3b47f; }
+
+@media (max-width: 1250px) {
+  .info {
+    padding-bottom: 25px; }
+    .info__container {
+      gap: 3%; }
+    .info__contacts {
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+      gap: 40px; }
+      .info__contacts .contacts__row {
+        gap: 16px; }
+      .info__contacts .contacts__lable {
+        width: 64px;
+        height: 64px; }
+    .info__questions {
+      width: 57%; }
+      .info__questions .questions__title {
+        margin-bottom: 29px; }
+      .info__questions .questions__form {
+        width: 100%;
+        display: -ms-grid;
+        display: grid;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        grid-template-areas: 'questions__name questions__email' 'questions__request questions__request' 'questions__btn questions__btn';
+        -ms-grid-columns: 48% 4% 48%;
+        grid-template-columns: 48% 48%;
+        -ms-grid-rows: 20% 10% 50% 10% 10%;
+        grid-template-rows: 20% 50% 10%;
+        row-gap: 10%;
+        -webkit-column-gap: 4%;
+        column-gap: 4%; }
+        .info__questions .questions__form label input {
+          width: 100%;
+          height: 100%; }
+        .info__questions .questions__form label textarea {
+          width: 100%;
+          height: 100%; }
+      .info__questions .questions__name {
+        grid-area: questions__name; }
+      .info__questions .questions__email {
+        grid-area: questions__email; }
+      .info__questions .questions__request {
+        grid-area: questions__request; }
+      .info__questions .questions__btn {
+        width: 180px;
+        height: 60px;
+        grid-area: questions__btn; } }
+
+@media (max-width: 1250px){
+      .info__questions .questions__name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1; }
+      .info__questions .questions__email {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3; }
+      .info__questions .questions__request {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3; }
+      .info__questions .questions__btn {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3; } }
+
+@media (max-width: 767px) {
+  .info {
+    padding-bottom: 25px; }
+    .info__container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 30px; }
+    .info h2 {
+      width: 100%;
+      text-align: center; }
+    .info__contacts {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      width: var(--contentWidh);
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      gap: auto; }
+      .info__contacts .contacts__row {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 40%;
+        gap: 16px; }
+    .info__questions {
+      width: 100%; }
+      .info__questions .questions__btn {
+        margin: auto; } }
+
+@media (max-width: 677px) {
+  .info__contacts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .info__contacts .contacts__row {
+      width: 90%; } }
+
+@media (max-width: 495px) {
+  .info__contacts {
+    width: 100%; }
+    .info__contacts .contacts__row {
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+    .info__contacts .contacts__lable {
+      width: -webkit-max-content;
+      width: -moz-max-content;
+      width: max-content;
+      height: -webkit-max-content;
+      height: -moz-max-content;
+      height: max-content; }
+      .info__contacts .contacts__lable img {
+        width: 34px;
+        height: 34px; }
+  .info__questions {
+    width: 100%; }
+    .info__questions .questions__title {
+      margin-bottom: 29px; }
+    .info__questions .questions__form {
+      width: 100%;
+      display: -ms-grid;
+      display: grid;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      grid-template-areas: 'questions__name' 'questions__email' 'questions__request' 'questions__btn';
+      -ms-grid-columns: 90%;
+      grid-template-columns: 90%;
+      -ms-grid-rows: max-content;
+      grid-template-rows: -webkit-max-content;
+      grid-template-rows: max-content;
+      row-gap: 5px;
+      -webkit-column-gap: unset;
+      column-gap: unset; }
+    .info__questions .questions__btn {
+      width: 120px;
+      height: 40px; }
+    .info__questions .questions__name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1; }
+    .info__questions .questions__email {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1; }
+    .info__questions .questions__request {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1; }
+    .info__questions .questions__btn {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1; } }
+
+@media (max-width: 495px) {
+  .info__contacts {
+    gap: 15px; }
+    .info__contacts .contacts__row {
+      text-align: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      gap: 3px; } }
 
 .map {
   width: 100%;

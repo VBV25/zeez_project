@@ -297,16 +297,16 @@
                 <div class="info__questions">
                     <h2 class="questions__title">have any questions?</h2>
                     <form class="questions__form">
-                        <label for="name">Name
-                            <input type="text" placeholder="Input your name" id="name">
+                        <label for="name" class="questions__name">Name
+                            <input type="text" placeholder="Input your name" id="name" required>
                         </label>
-                        <label for="email">Email
-                            <input type="email" placeholder="Input your email" id="email">
+                        <label for="email" class="questions__email">Email
+                            <input type="email" placeholder="Input your email" id="email" required>
                         </label>
-                        <label for="request">Speciale Request
+                        <label for="request" class="questions__request">Speciale Request
                             <textarea name="request" id="request" cols="30" rows="10" placeholder="
                     Input your special request
-                    "></textarea>
+                    " required></textarea>
                         </label>
                         <button class="questions__btn" type="submit">Send</button>
                     </form>
