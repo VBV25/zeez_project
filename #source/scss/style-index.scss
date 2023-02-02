@@ -6,6 +6,8 @@
 @import 'media-variables';
 //хедер и футер
 @import 'style-head-foot';
+//POPUP
+@import 'popup-form';
 //-
 //-
 body {
@@ -14,6 +16,18 @@ body {
 
 
 /*---------main----------*/
+
+//кдасс для запрета прокрутки во время открытых попапов и мобильного меню
+body.lock {
+    overflow: hidden;
+}
+
+//класс видимости попапа
+.visible {
+    top: 0;
+    /**/
+    transition: all 0.8s ease 0s;
+}
 
 main {
     @include wiHe($he: max-content);
@@ -465,10 +479,18 @@ main {
 @media (max-width: 767px) {
     .advantages {
         padding: 30px 0;
+        &__slide {
+            h3 {
+                min-height: 115px;
+            }
+            p {
+                min-height: 170px;
+            }
+        }
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 495px) {
     .advantages {
         .wrapper-gallery-text {
             @include wiHe(98vw);
@@ -479,10 +501,23 @@ main {
             h4 {
                 width: 67vw;
             }
+            h3 {
+                min-height: 100px;
+            }
+            p {
+                min-height: 255px;
+            }
+            h4 {
+                min-height: 60px;
+            }
         }
     }
 }
 
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
+//-------------------------------------------------
 //4 секция
 .cafe-menu {
     @include gridAlJu(center);

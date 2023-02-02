@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--'Стили'-->
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style-index.css" />
+
     <!--'Скрипты'-->
     <script src="js/jquery-3.6.0.min.js"></script>
-
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+
     <!--'Favicon'-->
     <link type="image/x-icon" href="img/png/icon.png" rel="icon">
 
@@ -58,6 +62,7 @@
     </div>
 
 </div>
+
     <main>
         <!--'1 БЛОК'-->
         <section class="
@@ -68,7 +73,7 @@
                     <div class="demonstration-block__text">A bad day with lunch is better than a good day without it.
                     </div>
                     <div class="demonstration-block__btn-group">
-                        <button class="demonstration-block__btn">Reserve a table</button>
+                        <button class="demonstration-block__btn" id="demonstration-block__btn">Reserve a table</button>
                         <div class="demonstration-block__social-group">
                             <a href="#" class="demonstration-block__link demonstration-block__fb"></a>
                             <a href="#" class="demonstration-block__link demonstration-block__ig"></a>
@@ -323,8 +328,69 @@
         </div>
     </div>
 </footer>
+    <!--POP-UP-question-->
+<section class="popup-reserv__wrapper">
+    <div class="popup-reserv__container">
+        <!--'Кнопка закрытия'-->
+        <div class="popup-reserv__btn-close " id="popup-reserv__btn-close">
+        </div>
+        <!--'Заголовок'-->
+        <h3 class="popup-reserv__title">Reserve a table</h3>
+        <!--'Форма'-->
+        <form class="popup-reserv__form">
 
+            <!--'Имя'-->
+            <div class="popup-reserv__name-container">
+                <label for="popup-reserv__name">Name</label>
+                <input type="text" name="popup-reserv__name" id="popup-reserv__name" placeholder="Name" required />
+                <div class="popup-reserv__fail-message" id="fail-name"></div>
+            </div>
 
+            <!--'Фамилия'-->
+            <div class="popup-reserv__surname-container">
+                <label for="popup-reserv__surname">Surname</label>
+                <input type="text" name="popup-reserv__surname" id="popup-reserv__surname" placeholder="Surname" required />
+                <div class="popup-reserv__fail-message" id="fail-surname"></div>
+            </div>
+
+            <!--'Телефон'-->
+            <div class="popup-reserv__phone-container">
+                <label for="popup-reserv__phone">Phone</label>
+                <input type="phone" name="popup-reserv__phone" id="popup-reserv__phone" placeholder="Phone" required />
+                <div class="popup-reserv__fail-message" id="fail-phone"></div>
+            </div>
+
+            <!--'Количество персон'-->
+            <div class="popup-reserv__persons-container">
+                <label for="popup-reserv__persons">Persons</label>
+                <input type="number" name="popup-reserv__persons" id="popup-reserv__persons" placeholder="Persons" required />
+                <div class="popup-reserv__fail-message" id="fail-person"></div>
+            </div>
+
+            <!--'Комментарии'-->
+            <div class="popup-reserv__comments-container">
+                <label for="popup-reserv__comments">
+          Comments</label>
+                <textarea name="popup-reserv__comments" id="popup-reserv__comments" maxlength="500" placeholder="Comments"></textarea>
+            </div>
+
+            <!--'Кнопка отправки'-->
+            <div class="popup-reserv__btn-container">
+                <button type="submit" class="popup-reserv__btn" id="popup-reserv__btn">Send</button>
+                <div class="popup-reserv__fail-message" id="fail-form"></div>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+    <!--кнопк прокрутки-->
+    <div id="back-top">
+        <a href="#top">
+            <div class="up_btn"></div>
+        </a>
+    </div>
+    <!---->
     <!--'SWIPER'-->
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>

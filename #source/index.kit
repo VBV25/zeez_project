@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--'Стили'-->
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/style-index.css" />
+
     <!--'Скрипты'-->
     <script src="js/jquery-3.6.0.min.js"></script>
-
+    <script src="js/jquery.maskedinput.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/validation.js"></script>
+
     <!--'Favicon'-->
     <link type="image/x-icon" href="img/png/icon.png" rel="icon">
 
@@ -20,6 +24,7 @@
 
 <body>
     <!-- @import 'header.html' -->
+
     <main>
         <!--'1 БЛОК'-->
         <section class="
@@ -30,7 +35,7 @@
                     <div class="demonstration-block__text">A bad day with lunch is better than a good day without it.
                     </div>
                     <div class="demonstration-block__btn-group">
-                        <button class="demonstration-block__btn">Reserve a table</button>
+                        <button class="demonstration-block__btn" id="demonstration-block__btn">Reserve a table</button>
                         <div class="demonstration-block__social-group">
                             <a href="#" class="demonstration-block__link demonstration-block__fb"></a>
                             <a href="#" class="demonstration-block__link demonstration-block__ig"></a>
@@ -273,8 +278,15 @@
         </section>
     </main>
     <!-- @import 'footer.html' -->
+    <!-- @import 'popup.html' -->
 
-
+    <!--кнопк прокрутки-->
+    <div id="back-top">
+        <a href="#top">
+            <div class="up_btn"></div>
+        </a>
+    </div>
+    <!---->
     <!--'SWIPER'-->
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/swiper.js"></script>

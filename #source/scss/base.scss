@@ -18,6 +18,10 @@ $whiteColor: rgb(255,
 $blueColor: rgb(58,
 69,
 116);
+$blueColorOpacity: rgba(58,
+69,
+116,
+0.6);
 $blackColor: rgb(0,
 0,
 0);
@@ -140,6 +144,14 @@ $alIt: center) {
 
 //грид элемент: по вертикали центр, горизонтально - разнесено по краям
 @mixin gridAlJu($jusCon: space-between,
+$alIt: center) {
+    display: grid;
+    justify-content: $jusCon;
+    align-items: $alIt;
+}
+
+//грид центр
+@mixin gridCent($jusCon: center,
 $alIt: center) {
     display: grid;
     justify-content: $jusCon;

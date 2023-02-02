@@ -97,10 +97,6 @@
 }
 
 @media (max-width: 767px) {
-    //кдасс для запрета прокрутки во время открытых попапов и мобильного меню
-    body.lock {
-        overflow: hidden;
-    }
     //адаптив хедера 767
     .header {
         background-color: $whiteColor;
@@ -413,10 +409,3 @@
 
 
 /*-----------------------------*/
-
-//класс видимости попапа
-.visible {
-    top: 0;
-    /**/
-    transition: all 0.8s ease 0s;
-}
