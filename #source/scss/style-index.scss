@@ -249,6 +249,10 @@ main {
             40px,
             $color: $blackColor);
         }
+        //група ссылок на соц сети
+        &__social-group {
+            gap: 10px;
+        }
     }
 }
 
@@ -621,7 +625,7 @@ main {
 
 @media (max-width: 320px) {
     .advantages {
-        .wrapper-gallery-text {}
+        overflow: hidden;
         &__slide {
             p {
                 margin-bottom: 10px;
@@ -758,6 +762,12 @@ main {
     }
 }
 
+@media (max-width: 495px) {
+    .cafe-menu {
+        overflow: hidden;
+    }
+}
+
 //-------------------------------------------------
 //-------------------------------------------------
 //-------------------------------------------------
@@ -771,7 +781,7 @@ main {
     padding-top: 68px;
     background-color: $blueColor;
     &__header {
-        @include wiHe(1170px,
+        @include wiHe(var(--contentWidh),
         max-content);
         position: relative;
     }
@@ -780,82 +790,136 @@ main {
     }
     &__text {
         @include fontSizeP($color: $whiteColor);
-        width: 569px;
+        width: 564px;
     }
     &__nav {
         @include wiHe(max-content,
         max-content);
         @include flexAlJu;
         gap: 20px;
+        position: relative;
+        left: var(--contentWidh);
+        top: -100px;
+        min-width: 0;
+    }
+    .gallery__nav .swiper-button-prev::after {
         position: absolute;
-        top: 50%;
-        right: 0;
-        margin-top: -23px;
+        right: 120px;
+        color: $goldColor;
     }
-    &__arrow {
-        @include wiHe(31px,
-        31px);
-        margin: 10px;
-        border-top-left-radius: 5px;
-        background-color: $blueColor;
-        border-top: 2px solid $goldColor;
-        border-left: 2px solid $goldColor;
-        &:hover {
-            border-width: 3.5px;
-        }
-        &:disabled {
-            border-color: $darkGray;
-            cursor: default;
-        }
-        &:hover:disabled {
-            border-width: 2px;
-        }
-    }
-    .arrow-forward {
-        transform: rotate(-45deg);
-    }
-    .arrow-back {
-        transform: rotate(135deg);
+    .gallery__nav .swiper-button-next::after {
+        color: $goldColor;
     }
     &__row {
-        @include flexAlJu(space-around);
         @include wiHe(100%,
         max-content);
         position: absolute;
         top: 262px;
-        gap: 30px;
         overflow: hidden;
+        min-width: 0;
     }
     &__photo {
-        @include wiHe(970px,
-        var(--galleryImgHe));
-        // @include wiHe(970px,$galleryImgHe);
+        @include flCent;
+        img {
+            @include wiHe(var(--galleryImgWi),
+            var(--galleryImgHe));
+        }
     }
 }
 
 //--
 @media (max-width: 1250px) {
     .gallery {
-        display: none;
+        padding-top: 48px;
+        @include wiHe($he: 530px);
+        &__text {
+            width: 60%;
+        }
     }
 }
 
-@media (max-width: 1024px) {}
+@media (max-width: 1024px) {
+    .gallery {
+        @include wiHe($he: max-content);
+        padding: 38px 0 var(--botPadSect5);
+        &__nav {
+            top: -90px;
+        }
+        &__row {
+            top: 50%;
+        }
+    }
+}
 
-@media (max-width: 767px) {}
+@media (max-width: 630px) {
+    .gallery {
+        &__row {
+            top: 60%;
+        }
+    }
+}
 
-@media (max-width: 480px) {}
+@media (max-width: 767px) {
+    .gallery {
+        &__header {
+            margin: auto;
+            text-align: center;
+            h2 {
+                margin-bottom: 20px;
+            }
+        }
+        &__text {
+            width: 90%;
+            margin: auto;
+            //text-align: center;
+        }
+        &__nav {
+            border: 2px solid rgb(217, 255, 0);
+            left: unset;
+            top: 0;
+            margin: 50px auto;
+        }
+        .gallery__nav .swiper-button-prev::after {
+            right: 70px;
+        }
+        .gallery__nav .swiper-button-next::after {
+            position: absolute;
+            left: 70px;
+        }
+        &__row {
+            top: 68%;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .gallery {
+        &__row {
+            top: 80%;
+        }
+    }
+}
+
+@media (max-width: 230px) {
+    .gallery {
+        &__row {
+            top: 84%;
+        }
+    }
+}
 
 //6 секция
 .info {
+    overflow: hidden;
     @include wiHe($he: max-content);
-    @include flexAlJu(center);
+    @include flCent;
+    box-sizing: border-box;
     background-color: $whiteColor;
     padding-top: calc(var(--galleryImgHe) / 2 + var(--padTop6Block));
-    //padding-top: $galleryImgHe/ 2 + $padTop6Block;
     padding-bottom: 25px;
     &__container {
-        @include wiHe(1170px,
+        box-sizing: border-box !important;
+        @include wiHe(var(--contentWidh),
         max-content);
         @include flexAlJu(start,
         start);
@@ -931,9 +995,7 @@ main {
 
 //--
 @media (max-width: 1250px) {
-    .info {
-        display: none;
-    }
+    .info {}
 }
 
 @media (max-width: 1024px) {}

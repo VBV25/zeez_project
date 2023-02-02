@@ -4,7 +4,7 @@
         --heHeader: 80px; //выс.хед
         --menuGapHead: 25px; //промежуток между ссыл.меню.хедер
         //---контент
-        --contentWidh: 90%; //шир.контент.части в блок.
+        --contentWidh: 90vw; //шир.контент.части в блок.
         --logoHedWe: 235px; //шир.логотип
         --logoHedHe: 45px; //выс.логотип
         //1блок
@@ -19,9 +19,9 @@
         --photoSquareWi: 75%; //шир.фото2секц
         --photoSquareHe: calc(var(--photoSquareWi) * 1.165); //выс.фото2секц
         //5блок
-        --galleryImgHe: 646px; //выс.фото в галерее
+        --galleryImgHe: 546px; //выс.фото в галерее
         //6блок
-        --padTop6Block: 101px; //отступ верх.от галереи
+        --padTop6Block: 70px; //отступ верх.от галереи
     }
 }
 
@@ -38,6 +38,9 @@
         --timetableHe: 488px; //выс.втор.секц
         --squareWi: 30%; //шир.квадрата.рамки
         --photoSquareWi: 75%; //шир.фото2секц
+        //5блок
+        --botPadSect5: 235px; //нижний паддинг 5секц
+        --galleryImgHe: 400px; //выс.фото в галерее
     }
 }
 
@@ -78,6 +81,14 @@
     }
 }
 
+@media (max-width: 630px) {
+     :root {
+        //5блок
+        --botPadSect5: 30%; //нижний паддинг 5секц
+        --galleryImgHe: 300px; //выс.фото в галерее
+    }
+}
+
 @media (max-width: 495px) {
      :root {
         //
@@ -92,6 +103,16 @@
         --squareWi: 150px; //шир.квадрата.рамки
         --photoSquareWi: 115px; //шир.фото2секц
         --photoSquareHe: calc(var(--photoSquareWi) * 1.5); //выс.фото2секц
+        //5блок
+        --galleryImgHe: 240px; //выс.фото в галерее
+    }
+}
+
+@media (max-width: 375px) {
+     :root {
+        //5блок
+        --botPadSect5: 20%; //нижний паддинг 5секц
+        --galleryImgHe: 200px; //выс.фото в галерее
     }
 }
 
@@ -106,6 +127,15 @@
         //---контент
         --logoHedWe: 85px; //шир.логотип
         --logoHedHe: 25px; //выс.логотип
-        //1блок
+        //5блок
+        --galleryImgHe: 150px; //выс.фото в галерее
+    }
+}
+
+@media (max-width: 230px) {
+     :root {
+        //5блок
+        --botPadSect5: 25%; //нижний паддинг 5секц
+        --galleryImgHe: 120px; //выс.фото в галерее
     }
 }

@@ -7,4 +7,11 @@ new Swiper('.wrapper-gallery-text', {
     },
 });
 
+new Swiper('.gallery__row', {
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
 /*--------------------------------------------------------------*/

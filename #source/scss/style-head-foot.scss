@@ -427,5 +427,15 @@
     }
 }
 
+@media (max-width: 320px) {
+    .footer {
+        overflow: hidden;
+        //группа ссылок
+        &__sotial-link-group {
+            gap: 10px;
+        }
+    }
+}
+
 
 /*-----------------------------*/
