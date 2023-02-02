@@ -30,6 +30,7 @@ body.lock {
 }
 
 main {
+    overflow: hidden;
     @include wiHe($he: max-content);
 }
 
@@ -375,7 +376,7 @@ main {
         }
         //обертка списка
         &__day-block-group ul {
-            width: 90vw;
+            width: var(--contentWidh);
             gap: 20px;
         }
         //элементы списка
@@ -422,10 +423,15 @@ main {
             margin: auto;
             gap: 5px;
         }
+        //
+        //
+        //
+        //
+        //
         //элементы списка
         &__day {
             box-sizing: border-box;
-            width: 80vw;
+            width: 100%;
             @include gridAlJu($jusCon: center);
             gap: 5px;
             h4 {
@@ -1215,20 +1221,22 @@ main {
     background-color: $whiteColor;
     padding: 25px 0px 20px;
     &__script {
-        @include wiHe(1170px,
+        @include wiHe(var(--contentWidh),
         547px);
+        @include bgImg;
+        background-image: url('../img/map.jpg');
+    }
+    &__google-map {
+        @include wiHe;
     }
 }
 
 //--
-@media (max-width: 1250px) {
+@media (max-width: 480px) {
     .map {
-        display: none;
+        &__script {
+            @include wiHe(var(--contentWidh),
+            347px);
+        }
     }
 }
-
-@media (max-width: 1024px) {}
-
-@media (max-width: 767px) {}
-
-@media (max-width: 480px) {}

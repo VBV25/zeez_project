@@ -135,7 +135,7 @@ h6 {
     --fsMenuHead: 15px;
     --fsH2: 40px;
     --liHeH2: 44px;
-    --heHeader: 80px;
+    --heHeader: 50px;
     --menuGapHead: 30px;
     --logoHedWe: 185px;
     --logoHedHe: 38px;
@@ -1009,6 +1009,7 @@ body.lock {
   transition: all 0.4s ease 0s; }
 
 main {
+  overflow: hidden;
   width: 100%;
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -1393,7 +1394,7 @@ main {
       -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
     .timetable__day-block-group ul {
-      width: 90vw;
+      width: var(--contentWidh);
       gap: 20px; }
     .timetable__day {
       display: -ms-grid;
@@ -1451,7 +1452,7 @@ main {
   .timetable__day {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    width: 80vw;
+    width: 100%;
     display: -ms-grid;
     display: grid;
     -webkit-box-pack: center;
@@ -2276,9 +2277,18 @@ main {
   background-color: white;
   padding: 25px 0px 20px; }
   .map__script {
-    width: 1170px;
-    height: 547px; }
+    width: var(--contentWidh);
+    height: 547px;
+    background-color: white;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../img/map.jpg"); }
+  .map__google-map {
+    width: 100%;
+    height: 100%; }
 
-@media (max-width: 1250px) {
-  .map {
-    display: none; } }
+@media (max-width: 480px) {
+  .map__script {
+    width: var(--contentWidh);
+    height: 347px; } }
