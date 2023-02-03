@@ -18,13 +18,10 @@ $(document).ready(function() {
     //
     //-----попап бронь
     $('#demonstration-block__btn').click(function(event) {
-        console.log('111');
-
         $('.popup-reserv__wrapper').addClass('visible');
         $('body').addClass('lock');
     });
     $('#popup-reserv__btn-close').click(function(event) {
-        console.log('222');
         $('.popup-reserv__wrapper').removeClass('visible');
         $('body').removeClass('lock');
     });
@@ -83,4 +80,6 @@ $(document).ready(function() {
             $('#request').val('');
         }
     });
+
+    //
 });

@@ -132,6 +132,25 @@ $(document).ready(function() {
                 dataType: 'html',
                 success: function(data) {
                     $('#fail-form').html('Sent').css({ color: 'green' });
+                    $('#popup-reserv__name')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    $('#popup-reserv__surname')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    $('#popup-reserv__phone')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    $('#popup-reserv__persons')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    $('#popup-reserv__comments')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+
+                    $('.popup-reserv__wrapper').removeClass('visible');
+                    $('body').removeClass('lock');
+                    alert('Message Sent');
                 },
             });
             return false;
@@ -149,9 +168,9 @@ $(document).ready(function() {
     //
     //
     /*-------ФОРМА-ОТПРАВКИ-INDEX-страницы---------*/
-    var validName = 1;
-    var validEmail = 1;
-    var validRequest = 1;
+    var validName2 = 1;
+    var validEmail2 = 1;
+    var validRequest2 = 1;
 
     /*ПРОВЕРКА НА ПРАВИЛЬНОСТЬ ЗАПОЛНЕНИЯ*/
 
@@ -162,23 +181,23 @@ $(document).ready(function() {
         var rv_name = /^[a-zA-Z]+$/; //для имени и фамилии
         var nameQuestionsValid = rv_name.test(nameQuestions);
         if (nameQuestions.length < 2) {
-            validName = 1;
+            validName2 = 1;
             $('#name')
                 .val('At least 2 characters')
                 .css({ borderColor: 'red', color: 'red' });
         } else if (nameQuestions == '') {
-            validName = 1;
+            validName2 = 1;
             $('#name')
                 .val('The field is not filled')
                 .css({ borderColor: 'red', color: 'red' });
         } else if (!nameQuestionsValid) {
-            validName = 1;
+            validName2 = 1;
             $('#name')
                 .val('Only latin letters')
                 .css({ borderColor: 'red', color: 'red' });
         } else {
             $('#name').css({ borderColor: 'green', color: 'green' });
-            return (validName = 0);
+            return (validName2 = 0);
         }
     });
 
@@ -193,18 +212,18 @@ $(document).ready(function() {
         //
 
         if (emailQuestions == '') {
-            validEmail = 1;
+            validEmail2 = 1;
             $('#email')
                 .val('The field is not filled')
                 .css({ borderColor: 'red', color: 'red' });
         } else if (!emailValid) {
-            validEmail = 1;
+            validEmail2 = 1;
             $('#email')
                 .val('Incorrect email')
                 .css({ borderColor: 'red', color: 'red' });
         } else {
             $('#email').css({ borderColor: 'green', color: 'green' });
-            validEmail = 0;
+            validEmail2 = 0;
         }
     });
 
@@ -213,72 +232,73 @@ $(document).ready(function() {
     $('.questions__btn').click(function() {
         var requestQuestions = $('#request').val();
         if (requestQuestions.length < 2) {
-            validRequest = 1;
+            validRequest2 = 1;
             $('#request')
                 .val('At least 2 characters')
                 .css({ borderColor: 'red', color: 'red' });
         } else if (requestQuestions == '') {
-            validRequest = 1;
+            validRequest2 = 1;
             $('#request')
                 .text('The field is not filled')
                 .css({ borderColor: 'red', color: 'red' });
         } else {
             $('#request').css({ borderColor: 'green', color: 'green' });
-            validRequest = 0;
+            validRequest2 = 0;
         }
+    });
+    //ОТПРАВКА В  PHP
+    $('.questions__btn').on('click', function() {
+        var nameQuestions = $('#name').val();
 
-        //ОТПРАВКА В  PHP
-        $('.questions__btn').on('click', function() {
-            var nameQuestions = $('#name').val();
+        var emailQuestions = $('#email').val();
 
-            var emailQuestions = $('#email').val();
+        var requestQuestions = $('#request').val();
 
-            var requestQuestions = $('#request').val();
+        console.log(validName2);
+        console.log(validEmail2);
+        console.log(validRequest2);
 
-            console.log(validName);
-            console.log(validEmail);
-            console.log(validRequest);
+        if (validName2 == 0 && validEmail2 == 0 && validRequest2 == 0) {
+            console.log('отправлено');
 
-            if (validName == 0 && validEmail == 0 && validRequest == 0) {
-                console.log('отправлено');
+            $.ajax({
+                url: 'php/ajax-index.php',
+                type: 'POST',
+                cache: false,
+                data: {
+                    nameQuestions: nameQuestions,
 
-                $.ajax({
-                    url: 'php/ajax.php',
-                    type: 'POST',
-                    cache: false,
-                    data: {
-                        nameQuestions: nameQuestions,
+                    emailQuestions: emailQuestions,
 
-                        emailQuestions: emailQuestions,
-
-                        requestQuestions: requestQuestions,
-                    },
-                    dataType: 'html',
-                    success: function(data) {
-                        $('#request')
-                            .val('')
-                            .css({ borderColor: '$smokeColor', color: '$blackColor' });
-                        $('#email')
-                            .val('')
-                            .css({ borderColor: '$smokeColor', color: '$blackColor' });
-                        $('#name')
-                            .val('')
-                            .css({ borderColor: '$smokeColor', color: '$blackColor' });
-                        alert('Sent');
-                    },
-                });
-                return false;
-            } else {
-                $('questions__btn').css({
-                    boxShadow: '0px 0px 10px 1px $goldColor',
-                    color: 'red',
-                });
-                console.log('Not sent');
-                return false;
-            }
-        });
+                    requestQuestions: requestQuestions,
+                },
+                dataType: 'html',
+                success: function(data) {
+                    $('#request')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    $('#email')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    $('#name')
+                        .val('')
+                        .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                    alert('Sent');
+                },
+            });
+            return false;
+        } else {
+            $('questions__btn').css({
+                boxShadow: '0px 0px 10px 1px $goldColor',
+                color: 'red',
+            });
+            console.log('Not sent');
+            return false;
+        }
     });
 });
+
+//
 
 //
 //
