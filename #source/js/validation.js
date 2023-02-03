@@ -255,6 +255,15 @@ $(document).ready(function() {
                     },
                     dataType: 'html',
                     success: function(data) {
+                        $('#request')
+                            .val('')
+                            .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                        $('#email')
+                            .val('')
+                            .css({ borderColor: '$smokeColor', color: '$blackColor' });
+                        $('#name')
+                            .val('')
+                            .css({ borderColor: '$smokeColor', color: '$blackColor' });
                         alert('Sent');
                     },
                 });
