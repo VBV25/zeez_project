@@ -263,32 +263,35 @@ main {
 //-------------------------------------------------
 //2 секция
 .timetable {
-    @include flexAlJu(center);
     @include wiHe($he: var(--timetableHe));
     background-color: $whiteColor;
     &__wrapper {
-        @include flexAlJu;
         @include wiHe(var(--contentWidh));
+        @include flexAlJu;
+        margin: auto;
     }
-    &__day-block-group ul {
-        @include gridAlJu(unset);
-        min-width: max-content;
+    &__day-block-group {
+        display: block;
+        max-width: 100%;
         height: max-content;
-        gap: 40px;
+        ul {
+            display: block;
+        }
     }
     &__day {
-        display: grid;
-        gap: 10px;
+        display: block;
+        margin-bottom: 30px;
         h4 {
             @include fontSizeH4;
         }
         h5 {
             @include fontSizeH5;
-            display: flex;
+            @include flCent(start);
+            margin: 10px 0;
         }
         span {
             @include wiHe(max-content);
-            @include flexAlJu(center);
+            @include flCent;
             padding: 0 12px;
         }
     }
@@ -339,15 +342,17 @@ main {
 
 @media (max-width: 1024px) {
     .timetable {
-        &__day-block-group ul {
-            gap: 20px;
-        }
         &__day {
-            gap: 5px;
+            margin-bottom: 20px;
+            h5 {
+                margin: 8px 0;
+            }
             span {
+                @include wiHe(max-content,
+                100%);
                 padding: 0 4px;
                 img {
-                    @include wiHe(20px,
+                    @include wiHe(25px,
                     auto);
                 }
             }
@@ -369,27 +374,18 @@ main {
 @media (max-width: 767px) {
     .timetable {
         @include wiHe($he: max-content);
+        padding: 50px 1%;
         //обертка
         &__wrapper {
-            @include flCent;
-            flex-wrap: wrap;
-        }
-        //обертка списка
-        &__day-block-group ul {
-            width: var(--contentWidh);
-            gap: 20px;
+            display: block;
         }
         //элементы списка
         &__day {
-            @include gridAlJu($jusCon: center);
-            gap: 5px;
-            h4 {
-                @include flCent;
-            }
+            text-align: center;
             h5 {
                 @include flCent;
                 span {
-                    padding: 0 4px;
+                    padding: 0 8px;
                     img {
                         @include wiHe(30px,
                         auto);
@@ -416,27 +412,16 @@ main {
 @media (max-width: 495px) {
     .timetable {
         //обертка списка
-        &__wrapper {
+        &__day-block-group {
+            display: block;
             box-sizing: border-box;
+            ul {
+                width: 100%;
+            }
         }
-        &__day-block-group ul {
-            margin: auto;
-            gap: 5px;
-        }
-        //
-        //
-        //
-        //
-        //
         //элементы списка
         &__day {
-            @include flCent;
-            flex-direction: column;
             width: 100%;
-            gap: 5px;
-            h4 {
-                @include flCent;
-            }
             h5 {
                 @include flCent;
                 flex-wrap: wrap;
@@ -781,15 +766,18 @@ main {
 //5 секция
 .gallery {
     @include wiHe($he: 605px);
-    @include gridAlJu(center,
-    unset);
+    //@include gridAlJu(center,unset);
+    z-index: 30;
+    display: block;
     position: relative;
     padding-top: 68px;
     background-color: $blueColor;
+    //заголовок и текст
     &__header {
         @include wiHe(var(--contentWidh),
         max-content);
         position: relative;
+        margin: auto;
     }
     &__title {
         @include fontSizeH2($color: $whiteColor);
@@ -834,6 +822,7 @@ main {
     &__row {
         @include wiHe(100%,
         max-content);
+        display: block;
         z-index: 30;
         position: absolute;
         top: 262px;
@@ -865,7 +854,7 @@ main {
         @include wiHe($he: max-content);
         padding: 38px 0 var(--botPadSect5);
         &__nav {
-            top: -90px;
+            top: -60px;
         }
         //контейнер с галереей
         &__row {
@@ -898,7 +887,7 @@ main {
         //контейнер со стрелками галереи
         &__nav {
             left: unset;
-            top: 0;
+            top: 30px;
             margin: 50px auto;
         }
         //стрелки галереи
@@ -912,6 +901,22 @@ main {
         //контейнер со слайдами галереи
         &__row {
             top: 68%;
+        }
+    }
+}
+
+@media (max-width: 540px) {
+    .gallery {
+        &__nav {
+            top: 15px;
+        }
+    }
+}
+
+@media (max-width: 470px) {
+    .gallery {
+        &__nav {
+            top: -10px;
         }
     }
 }
@@ -976,7 +981,7 @@ main {
                     @include fontSizeP;
                 }
                 h4 {
-                    @include fontSizeH4;
+                    @include fontSizeH4($color: $blackColor !important);
                 }
             }
         }
