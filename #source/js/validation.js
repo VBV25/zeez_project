@@ -12,9 +12,10 @@ $(document).ready(function() {
     /*имя*/
     $('.popup-reserv__form').mouseover(function() {
         var nameReserv = $('#popup-reserv__name').val();
+        var nameQuestions = $('#name').val();
         var rv_name = /^[a-zA-Z]+$/; //для имени и фамилии
         var nameValid = rv_name.test(nameReserv);
-
+        var nameQuestionsValid = rv_name.test(nameQuestions);
         if (nameReserv.length < 2) {
             validName = 1;
             $('#fail-name').text('At least 2 characters').css({ color: 'red' });
@@ -116,7 +117,7 @@ $(document).ready(function() {
             console.log('отправлено');
 
             $.ajax({
-                url: 'php/ajax.php',
+                url: 'php/ajax-popup.php',
                 type: 'POST',
                 cache: false,
                 data: {
@@ -140,4 +141,136 @@ $(document).ready(function() {
             return false;
         }
     });
+
+    //
+    //
+    //
+    //
+    //
+    //
+    /*-------ФОРМА-ОТПРАВКИ-INDEX-страницы---------*/
+    var validName = 1;
+    var validEmail = 1;
+    var validRequest = 1;
+
+    /*ПРОВЕРКА НА ПРАВИЛЬНОСТЬ ЗАПОЛНЕНИЯ*/
+
+    /*имя*/
+
+    $('.questions__btn').click(function() {
+        var nameQuestions = $('#name').val();
+        var rv_name = /^[a-zA-Z]+$/; //для имени и фамилии
+        var nameQuestionsValid = rv_name.test(nameQuestions);
+        if (nameQuestions.length < 2) {
+            validName = 1;
+            $('#name')
+                .val('At least 2 characters')
+                .css({ borderColor: 'red', color: 'red' });
+        } else if (nameQuestions == '') {
+            validName = 1;
+            $('#name')
+                .val('The field is not filled')
+                .css({ borderColor: 'red', color: 'red' });
+        } else if (!nameQuestionsValid) {
+            validName = 1;
+            $('#name')
+                .val('Only latin letters')
+                .css({ borderColor: 'red', color: 'red' });
+        } else {
+            $('#name').css({ borderColor: 'green', color: 'green' });
+            return (validName = 0);
+        }
+    });
+
+    /*---------Email----------*/
+
+    $('.questions__btn').click(function() {
+        var emailQuestions = $('#email').val();
+
+        var rv_email =
+            /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/; //для почты
+        var emailValid = rv_email.test(emailQuestions);
+        //
+
+        if (emailQuestions == '') {
+            validEmail = 1;
+            $('#email')
+                .val('The field is not filled')
+                .css({ borderColor: 'red', color: 'red' });
+        } else if (!emailValid) {
+            validEmail = 1;
+            $('#email')
+                .val('Incorrect email')
+                .css({ borderColor: 'red', color: 'red' });
+        } else {
+            $('#email').css({ borderColor: 'green', color: 'green' });
+            validEmail = 0;
+        }
+    });
+
+    /*----------ТЕКСТ----------*/
+
+    $('.questions__btn').click(function() {
+        var requestQuestions = $('#request').val();
+        if (requestQuestions.length < 2) {
+            validRequest = 1;
+            $('#request')
+                .val('At least 2 characters')
+                .css({ borderColor: 'red', color: 'red' });
+        } else if (requestQuestions == '') {
+            validRequest = 1;
+            $('#request')
+                .text('The field is not filled')
+                .css({ borderColor: 'red', color: 'red' });
+        } else {
+            $('#request').css({ borderColor: 'green', color: 'green' });
+            validRequest = 0;
+        }
+
+        //ОТПРАВКА В  PHP
+        $('.questions__btn').on('click', function() {
+            var nameQuestions = $('#name').val();
+
+            var emailQuestions = $('#email').val();
+
+            var requestQuestions = $('#request').val();
+
+            console.log(validName);
+            console.log(validEmail);
+            console.log(validRequest);
+
+            if (validName == 0 && validEmail == 0 && validRequest == 0) {
+                console.log('отправлено');
+
+                $.ajax({
+                    url: 'php/ajax.php',
+                    type: 'POST',
+                    cache: false,
+                    data: {
+                        nameQuestions: nameQuestions,
+
+                        emailQuestions: emailQuestions,
+
+                        requestQuestions: requestQuestions,
+                    },
+                    dataType: 'html',
+                    success: function(data) {
+                        alert('Sent');
+                    },
+                });
+                return false;
+            } else {
+                $('questions__btn').css({
+                    boxShadow: '0px 0px 10px 1px $goldColor',
+                    color: 'red',
+                });
+                console.log('Not sent');
+                return false;
+            }
+        });
+    });
 });
+
+//
+//
+//
